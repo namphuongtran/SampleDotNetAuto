@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ABM.Entity.Reports.ReportEntity>
+@{
+    ViewBag.Title = ".: Hanot Pest Control Company | ABM :.";
+    Layout = "~/Views/Site.cshtml";
+}
+
+<h1>Trang chủ</h1>
+
+@*@Html.Partial("~/Views/Partials/Statistics.cshtml")*@
+
+@*<!-- Row styling -->
+<div class="panel panel-default">
+    <div class="panel-heading"><h6 class="panel-title"><i class="icon-signup"></i> Danh sách Sản phẩm</h6></div>
+    <div class="table-responsive table table-hover table-striped table-bordered">
+        <table class="table">
+            <thead>
+            <tr>                
+                <th rowspan="2" class="w45 vertical_align_middle aligncenter" >STT</th>
+                <th rowspan="2" class="vertical_align_middle">Tên công ty</th>                                
+                <th colspan="3" class="tt aligncenter">Thành tiền <span style="font-size: 11px;">(Chưa VAT)</span></th>
+                <th rowspan="2" class="vertical_align_middle aligncenter pop_over" data-content="Giá trị thực chạy chênh lệch phát sinh khi hợp đồng thay đổi" data-title="Giá trị thay đổi" data-placement="left" data-original-title="">GTTĐ <i class="splashy-help"></i></th>
+            </tr>
+            <tr>
+                <th class="mtc1 aligncenter w92">Nội bộ</th>
+                <th class="mtc2 aligncenter w92">Khuyến mại</th>
+                <th class="mtc3 aligncenter w92">Thực chạy</th>                
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td class="aligncenter">@Html.DisplayFor(modelItem => item.STT)</td>
+                <td>@Html.DisplayFor(modelItem => item.GroupFieldName)</td>
+
+                <td class="alignright">@Html.DisplayFor(modelItem => item.ThanhTienNoiBo)</td>
+                <td class="alignright">@Html.DisplayFor(modelItem => item.ThanhTienKhuyenMai)</td>
+                <td class="alignright">@Html.DisplayFor(modelItem => item.ThanhTienKhuyenMai)</td>
+                <td class="alignright">@Html.DisplayFor(modelItem => item.GiaTriThayDoi)</td>
+            </tr>    
+            }            
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- /row styling -->*@

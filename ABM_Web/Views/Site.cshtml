@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+        <title>@ViewBag.Title</title>
+
+        <link href="/css/bootstrap.min.css"     rel="stylesheet" type="text/css">
+        <link href="/css/londinium-theme.css"   rel="stylesheet" type="text/css">
+        <link href="/css/styles.css"            rel="stylesheet" type="text/css">
+        <link href="/css/icons.css"             rel="stylesheet" type="text/css">        
+        <link href="/css/correction.css"        rel="stylesheet" type="text/css"> 
+        
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui.min.js"></script>        
+
+        <script type="text/javascript" src="/js/plugins/interface/daterangepicker.js"></script>
+        <script type="text/javascript" src="/js/plugins/interface/moment.js"></script>
+        <script type="text/javascript" src="/js/plugins/interface/jgrowl.min.js"></script>
+        
+        <script type="text/javascript" src="/js/plugins/forms/uniform.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/forms/select2.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/forms/multiselect.js"></script>
+        <script type="text/javascript" src="/js/plugins/forms/validate.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/interface/mousewheel.js"></script>
+        <script type="text/javascript" src="/js/plugins/interface/hover_dropdown.min.js"></script>
+
+        <script type="text/javascript" src="/js/plugins/mustache/mustache.js"></script>
+        <script type="text/javascript" src="/js/plugins/mustache/jquery.mustache.js"></script>
+        
+        <script type="text/javascript" src="/js/globalize/globalize.js"></script>
+        <script type="text/javascript" src="/js/globalize/globalize.culture.de-DE.js"></script>
+
+        <script type="text/javascript" src="/js/plugins/interface/mousewheel.js"></script>
+        <script type="text/javascript" src="/js/plugins/interface/timepicker.min.js"></script>
+
+        <script type="text/javascript" src="/js/plugins/forms/uniform.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/interface/jquery.slimscroll.js"></script>
+
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/application_blank.js"></script>                          
+        
+        <script type="text/javascript" src="/js/main/utils.js"></script>        
+        <script type="text/javascript" src="/js/main/common.js"></script>       
+        <script type="text/javascript" src="/js/main/system.js"></script> 
+    </head>
+    
+    <body class="sidebar-narrow">
+        @Html.Partial("~/Views/Partials/Common/Navbar.cshtml")
+                
+        <!-- Page container -->
+        <div class="page-container">
+            
+            @Html.Partial("~/Views/Partials/Common/Sidebar.cshtml")
+
+            <!-- Page content -->
+            <div class="page-content">
+
+                @RenderBody()
+             
+                @Html.Partial("~/Views/Partials/Common/Footer.cshtml")
+            </div>
+            <!-- /page content -->
+
+        </div>
+        <!-- /page container -->
+        
+        <!-- Form modal -->
+        <div id="formModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content"></div>
+            </div>
+        </div>
+        <!-- /form modal -->   
+        
+        <script type="text/javascript">
+             $(function () {
+                 common.dynamicNavigator();
+
+                 //$('.select2-hidden-accessible').css({ 'display': 'none' });
+             });
+        </script> 
+    </body>    
+</html>

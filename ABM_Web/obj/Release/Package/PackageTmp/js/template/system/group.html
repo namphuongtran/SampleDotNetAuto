@@ -1,0 +1,197 @@
+﻿<script id="tpl-list-group" type="text/html">            
+    {{#Data}}           
+    <tr>    
+        <td class="aligncenter">{{ItemIndex}}</td>
+        <td>{{Name}}</td>
+        <td>{{Description}}</td>        
+        <td class="aligncenter">
+            <div class="btn-group mr5">{{{ImageStatus}}}</div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-icon btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="icon-grid"></i></button>
+                <ul class="dropdown-menu icons-right dropdown-menu-right">
+                    <li><a onclick="system.group.manipulate(systemConfig.action.groupMenuPermission, {{AdminGroupId}}, '{{Name}}');"><i class="icon-cog"></i> Thiết lập chức năng</a></li>
+                    <li><a onclick="system.group.manipulate(systemConfig.action.userInGroup, {{AdminGroupId}}, '{{Name}}');"><i class="icon-users"></i> Thành viên</a></li>                    
+                    <li><a onclick="system.group.manipulate(systemConfig.action.getById, {{AdminGroupId}});"><i class="icon-pencil3"></i> Sửa</a></li>
+                    <li><a onclick="system.group.manipulate(systemConfig.action.del, {{AdminGroupId}});"><i class="icon-remove3"></i> Xóa</a></li>
+                </ul>
+            </div>                        
+        </td>
+    </tr>   
+    {{/Data}}
+
+    {{^Data}}
+    <tr class="level" abm_action="no">
+        <td colspan="4">Không có dữ liệu!</td>   
+    </tr>        
+    {{/Data}}
+</script>
+
+
+<script id="tpl-form-group" type="text/html">        
+    <form class="validate" action="#" role="form" method="post">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> Quản lý nhóm</h4>
+        </div>
+
+        <!-- Form inside modal -->
+        <div class="modal-body with-padding">
+            <div class="block-inner text-danger">
+                <h6 class="heading-hr">Tạo mới nhóm <small class="display-block">(*) Bắt buộc phải nhập</small></h6>
+            </div>                            
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Tên nhóm <span class="mandatory">*</span></label>
+                        <input type="text" name="Name" tabindex="1" class="required form-control">
+                    </div>						
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="control-label">Độ ưu tiên <span class="mandatory">*</span></label>
+                        <input type="text" name="Priority" value="1" tabindex="2" class="required form-control">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label>Trạng thái</label>
+                        <input id="ddlStatus" value="1" tabindex="3" type="hidden"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Mô tả</label>							
+                        <textarea name="Description" rows="5" cols="5" tabindex="4" class="form-control"></textarea>
+                    </div>							
+                </div>
+            </div>					
+        </div>
+
+        <div class="modal-footer">			        
+            <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="6">Đóng</button>					
+            <button onclick="system.group.manipulate(systemConfig.action.save, 0);" type="button" class="btn btn-success" tabindex="5">Lưu lại</button>
+        </div>
+    </form>
+</script>
+
+
+<script id="tpl-get-group" type="text/html">        
+    {{#Data}}           
+    <form class="validate" action="#" role="form" method="post">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> Quản lý nhóm</h4>
+        </div>
+
+        <!-- Form inside modal -->
+        <div class="modal-body with-padding">
+            <div class="block-inner text-danger">
+                <h6 class="heading-hr">Sửa thông tin nhóm <small class="display-block">(*) Bắt buộc phải nhập</small></h6>
+            </div>
+                
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Tên nhóm <span class="mandatory">*</span></label>
+                        <input type="text" name="Name" value="{{Name}}" tabindex="" class="form-control">
+                    </div>						
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="control-label">Độ ưu tiên <span class="mandatory">*</span></label>
+                        <input type="text" name="Priority" value="{{Priority}}" tabindex="2" class="form-control">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label>Trạng thái</label>
+                        <input id="ddlStatus" tabindex="3" type="hidden"/>                            
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Mô tả</label>							
+                        <textarea name="Description" rows="5" cols="5" tabindex="4" class="form-control">{{Description}}</textarea>
+                    </div>							
+                </div>
+            </div>					
+        </div>
+
+        <div class="modal-footer">			        
+            <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="6">Đóng</button>					
+            <button onclick="system.group.manipulate(systemConfig.action.save, {{AdminGroupId}});" type="button" class="btn btn-success" tabindex="5">Lưu lại</button>
+        </div>
+    </form>
+    {{/Data}}    
+</script>
+
+
+<script id="tpl-user-in-group" type="text/html">       
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><i class="icon-paragraph-justify2"></i>Phân quyền thành viên thuộc nhóm</h4>
+            </div>
+
+            <div class="modal-body with-padding">
+                <div class="block-inner text-danger">
+                    <h6 id="userInGroup" class="heading-hr"></h6>
+                </div>
+
+                <div class="form-group">
+                    <input id="ddlUser" tabindex="1" type="hidden" />
+                </div>
+
+                <div class="panel panel-default">
+                    <div id="lstGroupMenuPermission">
+                        <table class="table table-bordered table-striped datatable-selectable">
+                            <thead>
+                                <tr>
+                                    <th class="w45 aligncenter">STT</th>
+                                    <th>Tên đăng nhập</th>
+                                    <th>Thư điện tử</th>
+                                    <th class="w80 aligncenter">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#Data}}           
+                                <tr id="{{AdminUserId}}">
+                                    <td class="aligncenter">{{ItemIndex}}</td>
+                                    <td>{{Username}}</td>
+                                    <td>{{Email}}</td>
+                                    <td class="w45 aligncenter">
+                                        <button type="button" onclick="system.userInGroup.manipulate(systemConfig.action.removeUserInGroup, {{AdminUserId}});" data-placement='top' title='Xóa' class="btn btn-icon btn-default tip"><i class="icon-remove3"></i></button>
+                                    </td>
+                                </tr>
+                                {{/Data}}
+
+                                {{^Data}}
+                                <tr>
+                                    <td colspan="4">Không có dữ liệu!</td>
+                                </tr>
+                                {{/Data}} 
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="3">Đóng</button>
+                <button onclick="system.userInGroup.manipulate(systemConfig.action.addUserInGroup, 0);" type="button" class="btn btn-success" tabindex="5">Lưu lại</button>
+            </div>
+        </div>
+    </div>                    
+</script>

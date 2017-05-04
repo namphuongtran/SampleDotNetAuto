@@ -1,0 +1,14 @@
+C:\3. Working\backend\ABM.Entity\bin\Release\ABM.Entity.dll
+C:\3. Working\backend\ABM.Entity\bin\Release\ABM.Entity.pdb
+C:\3. Working\backend\ABM.Entity\bin\Release\ABM.Common.dll
+C:\3. Working\backend\ABM.Entity\bin\Release\ABM.Common.pdb
+C:\3. Working\backend\ABM.Entity\obj\Release\ABM.Entity.csprojResolveAssemblyReference.cache
+C:\3. Working\backend\ABM.Entity\obj\Release\ABM.Entity.dll
+C:\3. Working\backend\ABM.Entity\obj\Release\ABM.Entity.pdb
+E:\Working\backend\ABM.Entity\bin\Release\ABM.Entity.dll
+E:\Working\backend\ABM.Entity\bin\Release\ABM.Entity.pdb
+E:\Working\backend\ABM.Entity\bin\Release\ABM.Common.dll
+E:\Working\backend\ABM.Entity\bin\Release\ABM.Common.pdb
+E:\Working\backend\ABM.Entity\obj\Release\ABM.Entity.csprojResolveAssemblyReference.cache
+E:\Working\backend\ABM.Entity\obj\Release\ABM.Entity.dll
+E:\Working\backend\ABM.Entity\obj\Release\ABM.Entity.pdb

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resources>
+
+  <!-- Label -->  
+  <item name="lable-default-all">-- Tất cả --</item>  
+  <item name="lable-search">Tìm kiếm</item>
+  <item name="lable-date-range">Thời gian</item>
+  <item name="lable-advertising-type">Hình thức quảng cáo</item>
+  <item name="lable-product">Sản phẩm</item>
+  <item name="lable-banner">Banner</item>
+  <item name="lable-contract">Số hợp đồng</item>
+  <item name="lable-website">Website</item>
+  <item name="lable-departments">Phòng ban</item>
+  <item name="lable-parts">Bộ phận</item>
+  <item name="lable-group">Nhóm làm việc</item>  
+  <item name="lable-staff">Nhân viên</item>
+  <item name="lable-page-size">Số trang</item>
+  <item name="lable-unit">Đơn vị</item>
+  <item name="lable-show-noibo">Hiển thị hợp đồng nội bộ</item>
+  <item name="lable-lable">Nhãn hàng</item>
+  <item name="lable-customer">Khách hàng</item>
+  <item name="lable-company">Công ty</item>
+  <item name="lable-booking">Booking</item>  
+
+  <!-- Title Report -->
+  <item name="title-report-product">Báo cáo Thực chạy theo Sản phẩm</item>
+  <item name="title-report-group">Báo cáo Thực chạy theo Nhóm Làm Việc</item>
+  <item name="title-report-staff">Báo cáo Thực chạy theo Nhân Viên</item>
+  <item name="title-report-parts">Báo cáo Thực chạy theo Bộ Phận</item>
+  <item name="title-report-departments">Báo cáo Thực chạy theo Phòng Ban</item>
+  <item name="title-report-contract">Báo cáo Thực chạy theo Hợp Đồng</item>
+  <item name="title-report-website">Báo cáo Thực chạy theo Website</item>
+  <item name="title-report-customer">Báo cáo Thực chạy theo Khách hàng</item>
+  <item name="title-report-deviation">Báo cáo lệch treo hạ</item>
+
+  <!-- BreadCrumb -->
+  <item name="bread-crumb-tc">Thực chạy</item>  
+  <item name="bread-crumb-tcct">Báo cáo Chi tiết</item>
+  <item name="bread-crumb-tcht">Báo cáo Tổng hợp</item>
+  <item name="bread-crumb-tc-product">Theo Sản phẩm</item>
+  <item name="bread-crumb-tc-website">Theo Website</item>
+  <item name="bread-crumb-tc-contract">Theo Hợp đồng</item>
+  <item name="bread-crumb-tc-departments">Theo Phòng ban</item>
+  <item name="bread-crumb-tc-parts">Theo Bộ phận</item>
+  <item name="bread-crumb-tc-group">Theo Nhóm</item>
+  <item name="bread-crumb-tc-staff">Theo Nhân viên</item>    
+  <item name="bread-crumb-tc-label">Theo Nhãn hàng</item>
+  <item name="bread-crumb-tc-customer">Theo Khách hàng</item>
+  <item name="bread-crumb-tc-product-website">Báo cáo Website Sản phẩm</item>  
+  <item name="bread-crumb-lech-treo-ha">Báo cáo lệch treo hạ</item>
+  <item name="bread-crumb-tc-dltcthtsp">Dữ liệu Thực chạy từ Hệ thống Sản phẩm</item>
+  
+  <!-- Button -->
+  <item name="btn-view-report">Xem Báo Cáo</item>
+  <item name="btn-print">In</item>
+  <item name="btn-print-synthesis">Tổng hợp</item>
+  <item name="btn-print-detail">Chi tiết</item>
+  <item name="btn-download">Tải về</item>
+  <item name="btn-search">Tìm kiếm</item>
+
+  <!-- Grid -->
+  <item name="grid-processing">Chọn điều kiện tìm kiếm để hiển thị danh sách.</item>
+  <item name="grid-row-number">STT</item>
+  <item name="grid-product">Tên sản phẩm</item>
+  <item name="grid-website">Tên website</item>  
+  <item name="grid-contract">Số hợp đồng</item>
+  <item name="grid-department">Tên phòng ban</item>
+  <item name="grid-parts">Tên bộ phận</item>
+  <item name="grid-group">Nhóm làm việc</item>
+  <item name="grid-staff">Tên nhân viên</item>
+  <item name="grid-label">Nhãn hàng</item>
+  <item name="grid-unit">Đơn vị</item>
+  <item name="grid-not-vat">(Chưa VAT)</item>
+  <item name="grid-bookingId">BookingId</item>
+  <item name="grid-bannerId">BannerId</item>
+  <item name="grid-view">View</item>
+  <item name="grid-click">Click</item>
+  <item name="grid-customer">Tên khách hàng</item>  
+  <item name="grid-title-dltcthtsp">Dữ liệu mới nhất lấy về hoàn thành hàng ngày vào <strong>11h</strong></item>  
+
+  <item name="grid-sl">Số lượng</item>
+  <item name="grid-tt">Thành tiền</item>
+  <item name="grid-tt2">Thực thu</item>
+  <item name="grid-gttd">GTTĐ</item>
+  <item name="grid-gttd-title">Giá trị thay đổi</item>
+  <item name="grid-gttd-tooltip">Giá trị thực chạy chênh lệch phát sinh khi hợp đồng thay đổi</item>
+  <item name="grid-nb">Nội bộ</item>
+  <item name="grid-km">Khuyến mại</item>
+  <item name="grid-tc">Thực chạy</item>
+  
+  <item name="grid-hop-dong">Hợp đồng</item>
+  <item name="grid-lech-treo-ha">Lệch treo hạ</item>
+  <item name="grid-thuc-chay">Thực chạy</item>
+
+  <item name="grid-col">Ẩn hiện cột</item>
+  <item name="col-sl-nb">Số lượng Nội bộ</item>
+  <item name="col-sl-km">Số lượng Khuyến mại</item>
+  <item name="col-sl-tc">Số lượng Thực chạy</item>
+  <item name="col-tt-nb">Thành tiền Nội bộ</item>
+  <item name="col-tt-km">Thành tiền Khuyến mại</item>
+  <item name="col-tt-tc">Thành tiền Thực chạy</item>  
+  <item name="col-all">Hiện tất cả các cột</item>
+  
+  <!-- Report Product Website -->
+  <item name="col-product-website-adpage">Adpage</item>
+  <item name="col-product-website-sponsored-post">Sponsored Post</item>
+  <item name="col-product-website-dang-tin">Đăng tin</item>
+  <item name="col-product-website-balloon-ads">Balloon Ads</item>
+  <item name="col-product-website-tvc-online">TVC Online</item>
+  <item name="col-product-website-cpm-mass">CPM Mass</item>
+  <item name="col-product-website-mobile">Mobile</item>
+  <item name="col-product-website-banner-cpd">Banner CPD</item>
+  <item name="col-product-website-banner-cpd-chuyen-trang">Banner CPD chuyên trang</item>
+  <item name="col-product-website-boxapp-cpd">Boxapp CPD</item>
+  <item name="col-product-website-boxapp-cpm">Boxapp CPM</item>
+  <item name="col-product-website-boxapp-selfserving">Boxapp SelfServing</item>
+  <item name="col-product-website-boxapp-multibrand">Boxapp MultiBrand</item>
+  <item name="col-product-website-cpc-admarket">CPC Admarket</item>
+  <item name="col-product-website-cpc-plus">CPC Plus</item>
+  <item name="col-product-website-cpa">CPA</item>
+  <item name="col-product-website-cpm-admarket">CPM Admarket</item>
+  <item name="col-product-website-google-ads">Google Ads</item>
+  <item name="col-product-website-san-pham-khac">Sản phẩm khác</item>
+  <item name="tooltip-grid-product-website">Di vào bảng và cuộn chuột</item>
+
+  
+</Resources>

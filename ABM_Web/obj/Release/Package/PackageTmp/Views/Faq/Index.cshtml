@@ -1,0 +1,124 @@
+﻿@using ABM.Entity.Permission
+@{
+    ViewBag.Title = ".: Hanot Pest Control Company - Hướng dẫn :.";
+    Layout = "~/Views/Site.cshtml";    
+}
+
+<script src="/js/main/system.js"></script>
+
+<!-- Page header -->
+<div class="page-header">
+	<div class="page-title">
+		<h3>Hướng dẫn <small>Những câu hỏi thường gặp trong hệ thống.</small></h3>
+	</div>	
+</div>
+<!-- /page header -->
+
+
+<!-- Breadcrumbs line -->
+<div class="breadcrumb-line">
+    <ul class="breadcrumb">
+	    <li><a href="#">ABM</a></li>	    
+	    <li class="active">Hướng dẫn</li>
+    </ul>
+</div>
+<!-- /breadcrumbs line -->
+
+
+<!-- Question toggles group -->
+<div class="row">
+	<div class="col-md-6">
+	    <div id="faq1" class="panel-group block">
+	        @ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" />
+	    </div>
+	</div>
+    <div class="col-md-6">
+        <div id="faq2" class="panel-group block">
+            @ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" />
+        </div>
+    </div>
+</div>
+<!-- /question toggles group -->
+
+
+<h5 class="heading-hr text-center">    
+    Góp ý và thông báo lỗi 
+    <small class="display-block">Bạn có ý tưởng để cải tiến để tăng hiệu suất cho công việc. Hãy gửi góp ý cho chúng tôi :)</small>
+</h5>
+<!-- Contact us form -->
+<div class="row">
+	<div class="col-md-6">
+
+	    <!-- Simple contact form -->        
+		<form id="formError" action="#" class="block validate" enctype="multipart/form-data" role="form">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<label>Họ và tên: <span class="mandatory">*</span></label>
+		                <input type="text" name="FullName" placeholder="abm" class="form-control required">
+					</div>
+
+					<div class="col-md-6">
+						<label>Hòm thư: <span class="mandatory">*</span></label>
+		                <input type="text" name="Email" placeholder="abm@admicro.vn" class="form-control required">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<label>Ảnh:</label>
+					    <input id="attachFile" class="styled" type="file">
+					</div>
+
+					<div class="col-md-6">
+					    <label>Mức ưu tiên:</label>
+                        <input id="ddlPriority" type="hidden"/>		               
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label>Nội dung: <span class="mandatory">*</span></label>
+				<textarea rows="5" cols="5" name="Message" placeholder="Nội dung..." class="elastic form-control required"></textarea>
+			</div>
+
+		    <div class="text-right">
+		        <input id="btnSend" onclick="system.error.manipulate(systemConfig.action.send);" type="button" value="&nbsp; Gửi &nbsp;" class="btn btn-danger">
+		    </div>
+		</form>
+		<!-- /simple contact form -->
+
+	</div>
+
+	<div class="col-md-6">
+	    <div class="block">
+            <div id="regionMessage"></div>	        
+	        <h6>Thông tin liên hệ</h6>
+	        <ul class="icons-list">			    
+	            <li><strong>Văn phòng Hà Nội:</strong></li>
+	            <li><i class="icon-location3"></i> Tầng 11 tòa nhà CDC, 25-27 Lê Đại Hành, Hai Bà Trưng.</li>
+	            <li><i class="icon-phone4"></i> (84 4) 3974 8899 | Fax: (84 4) 3974 4081</li>
+	            <li><i class="icon-mail-send"></i> <a mailto="contact@admicro.vn">contact@admicro.vn</a> || Google+</li>			    			    
+	        </ul>
+	        <hr>
+	        <ul class="icons-list">			    
+	            <li><strong>Chi nhánh Hồ Chí Minh:</strong></li>
+	            <li><i class="icon-location3"></i> Tầng 5 tòa nhà 123 Tower, 123-127 Võ Văn Tần, Phường 6, Quận 3, Tp Hồ Chí Minh.</li>
+	            <li><i class="icon-phone4"></i> (84 8) 7307 7979 | Fax: (84 8) 3933 3774</li>
+	        </ul>
+	    </div>
+	</div>
+</div>
+<!-- /contact us form -->
+
+<script type="text/javascript">
+    $(function () {        
+        system.staticDropDownList(systemConfig.ddlPriority, systemConfig.data.errorPriority, 3, { id: 0, text: '-- Trạng thái --' }, null, true);
+        system.registerUniform();
+        
+        system.article.faq('#faq1', systemConfig.fixedFaq1, 0);
+        system.article.faq('#faq2', systemConfig.fixedFaq2, 1);        
+    })
+</script>

@@ -1,0 +1,96 @@
+﻿<!-- Post article -->
+<form id="formArticle" class="validate" action="#" role="form" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title"><i class="icon-bubble4"></i>Bài viết mới</h6>
+        </div>
+        <div class="panel-body">            
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Tiêu đề <span class="mandatory">*</span></label>
+                        <input type="text" name="Title" tabindex="1" class="required form-control">
+                    </div>				                                        
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Mô tả <span class="mandatory">*</span></label>
+                        <textarea rows="3" cols="5" name="Sapo" tabindex="2" class="form-control"></textarea>                        
+                    </div>				                                        
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <label>Chuyên mục cha</label>
+                        <input id="ddlFormCategory" tabindex="3" type="hidden"/>                        
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <label>Trạng thái</label>
+                        <input id="ddlFormArticleStatus" tabindex="4" type="hidden"/>                            
+                    </div>                                                   
+                </div>
+            </div>        
+                        
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <label>Ản đại diện</label>
+                        <div class="input-group">					        
+                            <input name="ImgAvatar" type="text" class="form-control">
+                            <span class="input-group-addon" onclick="system.article.openFileManager();"><i class="icon-image2"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label>Ngày xuất bản</label>
+                        <input type="text" class="form-control" tabindex="5" name="PublishedDate">
+                    </div>
+                    
+                    <div class="col-sm-2">
+                        <label>Giờ xuất bản</label>                        
+                        <input type="text" class="form-control" tabindex="6" name="PublishedTime"/>                        
+                    </div>
+                </div>
+            </div>       
+                
+            
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Nội dung </label>
+                        <textarea id="Body" class="form-control" name="Body" tabindex="7"></textarea>                        
+                    </div>				                                        
+                </div>
+            </div>                                
+
+            <div class="form-actions text-right">
+                <button onclick="window.location.href = '/he-thong/bai-viet';" type="button" class="btn btn-default" data-dismiss="modal" tabindex="9">Quay lại</button>					
+                <button onclick="system.article.manipulate(systemConfig.action.save, 0);" type="button" class="btn btn-success" tabindex="8">Lưu lại</button>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- /post article -->
+
+
+<script type="text/javascript" src="/js/plugins/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {        
+        system.dynamicDropDownList(systemConfig.ddlMenu, 0, { id: 0, text: '-- Gốc --' }, null, true);
+        system.dynamicDropDownList(systemConfig.ddlFormCategory, 0, { id: 0, text: '-- Chuyên mục --' }, null, true);
+
+        system.staticDropDownList(systemConfig.ddlFormArticleStatus, systemConfig.data.articleStatus, 1, null, null, true);
+
+        system.datepicker('#formArticle [name=PublishedDate]');
+        system.timeSpinner('#formArticle [name=PublishedTime]');
+        CKEDITOR.replace('Body');               
+    });        
+</script>

@@ -1,0 +1,982 @@
+﻿@using ABM.Common
+@{
+    ViewBag.Title = ".: Hanot Pest Control Company - Cá nhân :.";
+    Layout = "~/Views/Site.cshtml";
+}
+
+<script type="text/javascript" src="/js/plugins/forms/switch.min.js"></script>
+<script type="text/javascript" src="/js/plugins/forms/uniform.min.js"></script>
+<script type="text/javascript" src="/js/main/utils.js"></script>
+<script type="text/javascript" src="/js/main/system.js"></script>
+
+
+<!-- Page header -->
+<div class="page-header">
+	<div class="page-title">
+		<h3>@ABM.Resources.vi_VN.M_Personalization_Page_Title <small>@ABM.Resources.vi_VN.M_Personalization_Page_Title_Desc</small></h3>
+	</div>
+</div>
+<!-- /page header -->
+
+
+<!-- Breadcrumbs line -->
+<div class="breadcrumb-line">
+	<ul class="breadcrumb">
+		<li><a href="/@Constants.Dashboard">@ABM.Resources.vi_VN.Breadcrumb_ABM</a></li>
+		<li><a href="#">@ABM.Resources.vi_VN.Breadcrumb_Personalization</a></li>		
+	</ul>
+</div>
+<!-- /breadcrumbs line -->
+
+
+<!-- Profile grid -->
+<div class="row">
+	<div class="col-lg-2">
+
+		<!-- Profile links -->
+		<div class="block">
+			<div class="block">
+				<div class="thumbnail">
+					<div class="thumb">
+						<img alt="" src="/images/demo/users/face12.png">						
+					</div>
+						    
+					<div class="caption text-center">
+						<h6>@HttpContext.Current.Session[Constants.SessionFullname].ToString() <small>Team Leader</small></h6>
+					    <div class="icons-group">
+					        <a href="#" title="Facebook" class="tip"><i class="icon-facebook"></i></a>
+                            <a href="#" title="Twitter" class="tip"><i class="icon-twitter"></i></a>
+					        <a href="#" title="Yahoo" class="tip"><i class="icon-yahoo"></i></a>					        					        
+					    </div>
+					</div>
+				</div>
+			</div>
+
+			<ul class="nav nav-list">
+				<li class="nav-header">@ABM.Resources.vi_VN.M_Personalization_L_Individuals <i class="icon-accessibility"></i></li>
+			    <li><a>@ABM.Resources.vi_VN.M_Personalization_L_Account_Infomation</a></li>
+				<li><a>@ABM.Resources.vi_VN.M_Personalization_L_Tasks <span class="label label-danger">14</span></a></li>
+				<li><a>@ABM.Resources.vi_VN.M_Personalization_L_SettingMenu <span class="label label-danger">33</span></a></li>
+			</ul>
+		</div>
+		<!-- /profile links -->
+
+	</div>
+
+	<div class="col-lg-10">
+
+		<!-- Page tabs -->
+		<div class="tabbable page-tabs">
+		    <ul class="nav nav-pills nav-justified">
+		        <li><a href="#thong-tin-tai-khoan" data-toggle="tab"><i class="icon-paragraph-justify2"></i> @ABM.Resources.vi_VN.M_Personalization_L_Account_Infomation</a></li>
+		        <li><a href="#quan-ly-cong-viec" data-toggle="tab"><i class="icon-list"></i>@ABM.Resources.vi_VN.M_Personalization_L_Tasks <span class="label label-danger">14</span></a></li>
+		        <li><a href="#thiet-lap-chuc-nang" data-toggle="tab"><i class="icon-equalizer2"></i> @ABM.Resources.vi_VN.M_Personalization_L_SettingMenu <span class="label label-danger">33</span></a></li>
+		    </ul>
+
+		    <div class="tab-content">
+
+		        <!-- First tab -->
+		        <div class="tab-pane fade" id="thong-tin-tai-khoan">
+                    
+					<!-- Profile information -->
+					<form action="#" class="block" role="form">
+						<h6 class="heading-hr"><i class="icon-user"></i> @ABM.Resources.vi_VN.M_Personalization_L_Account_Infomation:</h6>
+						<div class="block-inner">
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label>Họ và tên</label>
+										<input type="text" value="ABM" class="form-control">
+									</div>
+									<div class="col-md-6">
+										<label>Mã nhân sự</label>
+										<input type="text" value="Kopyov" class="form-control">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+							    <div class="row">
+							        <div class="col-md-6">
+										<label>Số chứng minh thư</label>
+										<input type="text" value="Kopyov" class="form-control">
+									</div>
+							        <div class="col-md-6">
+							            <label>Địa chỉ</label>
+							            <input type="text" value="Ring street 12" class="form-control">
+							        </div>									
+							    </div>
+							</div>
+							
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label>Thư điện tử</label>
+										<input type="text" readonly="readonly" value="eugene@kopyov.com" class="form-control">
+									</div>
+									 <div class="col-md-6">
+						                <label>Điện thoại</label>
+						                <input type="text" value="+99-99-9999-9999" data-mask="+99-99-9999-9999" class="form-control">
+						            </div>
+								</div>
+							</div>
+
+						    <div class="form-group">
+						        <div class="row">
+						            <div class="col-md-12">
+						                <label>Ảnh đại diện:</label>
+						                <input type="file" class="styled form-control" id="report-screenshot">
+						                <span class="help-block">Định dạng được chấp nhận : gif, png, jpg . Kích thước tối đa tập tin 2Mb</span>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="text-right">					        
+					            <input type="submit" value="Thông tin cá nhân" class="btn btn-success">
+					        </div>
+						</div>
+                        
+
+					    <h6 class="heading-hr"><i class="icon-lock"></i> Đổi mật khẩu:</h6>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Tên đăng nhập:</label>
+									<input type="text" value="Kopyov" readonly="readonly" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label>Mật khẩu hiện tại:</label>
+									<input type="password" value="password" readonly="readonly" class="form-control">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Mật khẩu mới:</label>
+									<input type="password" placeholder="Enter new password" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label>Nhập lại mật khẩu mới:</label>
+									<input type="password" placeholder="Repeat new password" class="form-control">
+								</div>
+							</div>
+						</div>	
+                        
+                        <div class="form-group">
+							    <div class="row">
+								    <div class="col-md-6">
+									    <label>Ẩn/ hiện thông tin cá nhân: </label>
+									    <div class="radio">
+										    <label>
+											    <input type="radio" name="visibility" class="styled" checked="checked">
+											    Hiển thị cho tất cả mọi người
+										    </label>
+									    </div>
+
+									    <div class="radio">
+										    <label>
+											    <input type="radio" name="visibility" class="styled">
+											    Hiển thị cho bạn bè chỉ
+										    </label>
+									    </div>
+
+									    <div class="radio">
+										    <label>
+											    <input type="radio" name="visibility" class="styled">
+											    Chỉ hiển thị các kết nối của tôi
+										    </label>
+									    </div>
+
+									    <div class="radio">
+										    <label>
+											    <input type="radio" name="visibility" class="styled">
+											    Chỉ hiển thị đồng nghiệp của tôi
+										    </label>
+									    </div>
+								    </div>
+
+								    <div class="col-md-6">
+									    <label>Thông báo: </label>
+									    <div class="checkbox">
+										    <label>
+											    <input type="checkbox" class="styled" checked="checked">
+											    Thông báo mật khẩu hết hạn
+										    </label>
+									    </div>
+
+									    <div class="checkbox">
+										    <label>
+											    <input type="checkbox" class="styled" checked="checked">
+											    Thông báo tin nhắn mới
+										    </label>
+									    </div>
+
+									    <div class="checkbox">
+										    <label>
+											    <input type="checkbox" class="styled" checked="checked">
+											    Nhiệm vụ thông báo mới
+										    </label>
+									    </div>
+
+									    <div class="checkbox">
+										    <label>
+											    <input type="checkbox" class="styled">
+											    Mới yêu cầu liên lạc thông báo
+										    </label>
+									    </div>
+								    </div>
+							    </div>
+						    </div>					
+
+					    <div class="text-right">					        
+					        <input type="submit" value="Đổi mật khẩu" class="btn btn-success">
+					    </div>
+
+					</form>
+		            <!-- /profile information -->
+
+		        </div>
+		        <!-- /first tab -->
+                
+                 <!-- Second tab -->
+		        <div class="tab-pane fade" id="quan-ly-cong-viec">
+
+		            <!-- Tasks table -->
+			        <div class="block">
+			            <h6 class="heading-hr"><i class="icon-signup"></i> @ABM.Resources.vi_VN.M_Personalization_L_Tasks</h6>
+						<div class="datatable-tasks">
+						    <table class="table table-bordered">
+						        <thead>
+						            <tr>
+						                <th>Task Description</th>
+						                <th class="task-priority">Priority</th>
+						                <th class="task-date-added">Date Added</th>
+						                <th class="task-progress">Progress</th>
+						                <th class="task-deadline">Deadline</th>
+						                <th class="task-tools text-center">Tools</th>
+						            </tr>
+						        </thead>
+						        <tbody>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Donec suscipit ultrices commodo. Suspendisse potenti</a>
+						                    <span>General layout additions</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>September 20, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+													<span class="sr-only">90% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">14</strong> hours left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Donec sagittis sit amet felis non semper</a>
+						                    <span>Design &amp; UI concepts</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>September 18, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+													<span class="sr-only">40% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">2</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Pellentesque sed nibh non neque auctor ornare ac in est</a>
+						                    <span>HTML / CSS changes</span>
+						                </td>
+						                <td class="text-center"><span class="label label-info">Low</span></td>
+						                <td>September 2, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" style="width: 12%;">
+													<span class="sr-only">12% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">18</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Pellentesque habitant morbi tristique senectus et netus</a>
+						                    <span>HTML / CSS changes</span>
+						                </td>
+						                <td class="text-center"><span class="label label-success">Normal</span></td>
+						                <td>August 21, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+													<span class="sr-only">50% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">7</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Et malesuada fames ac turpis egestas</a>
+						                    <span>HTML / CSS changes</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>August 12, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+													<span class="sr-only">80% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">90</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Maecenas eros nisl, tempor vitae dolor eu</a>
+						                    <span>General layout additions</span>
+						                </td>
+						                <td class="text-center"><span class="label label-success">Normal</span></td>
+						                <td>August 7, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" style="width: 41%;">
+													<span class="sr-only">41% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">62</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Nunc gravida, nunc vel condimentum mattis</a>
+						                    <span>General layout additions</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>July 30, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+													<span class="sr-only">40% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">21</strong> hour left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Rhoncus rutrum metus neque rutrum tortor</a>
+						                    <span>General layout additions</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>July 26, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+													<span class="sr-only">60% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">62</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Fusce sapien velit, accumsan eget risus et</a>
+						                    <span>General layout additions</span>
+						                </td>
+						                <td class="text-center"><span class="label label-info">Low</span></td>
+						                <td>July 22, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+													<span class="sr-only">40% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">51</strong> day left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Suspendisse dictum vitae ante ut tempor</a>
+						                    <span>HTML / CSS changes</span>
+						                </td>
+						                <td class="text-center"><span class="label label-info">Low</span></td>
+						                <td>July 10, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" style="width: 6%;">
+													<span class="sr-only">6% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">2</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Maecenas porta augue et odio dignissim</a>
+						                    <span>HTML / CSS changes</span>
+						                </td>
+						                <td class="text-center"><span class="label label-info">Low</span></td>
+						                <td>June 25, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">
+													<span class="sr-only">65% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">3</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Morbi varius odio at quam vehicula mattis</a>
+						                    <span>Design &amp; UI concepts</span>
+						                </td>
+						                <td class="text-center"><span class="label label-success">Normal</span></td>
+						                <td>June 21, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+													<span class="sr-only">20% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">89</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Quisque ultrices libero in nisl fringilla</a>
+						                    <span>Design &amp; UI concepts</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>June 17, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+													<span class="sr-only">40% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">32</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Nam fermentum ut nunc eget tristique</a>
+						                    <span>HTML / CSS changes</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>June 14, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="31" aria-valuemin="0" aria-valuemax="100" style="width: 31%;">
+													<span class="sr-only">31% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">2</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Etiam viverra porttitor auctor</a>
+						                    <span>Design &amp; UI concepts</span>
+						                </td>
+						                <td class="text-center"><span class="label label-success">Normal</span></td>
+						                <td>June 3, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+													<span class="sr-only">90% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">1</strong> day left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Curabitur quis commodo massa. Proin eget arcu eros</a>
+						                    <span>Design &amp; UI concepts</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>May 9, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+													<span class="sr-only">10% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">2</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Maecenas sed sapien vel nisi porta sollicitudin</a>
+						                    <span>Design &amp; UI concepts</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>May 2, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+													<span class="sr-only">40% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">37</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Nunc placerat mattis consectetur. Cras sagittis scelerisque imperdiet</a>
+						                    <span>HTML / CSS changes</span>
+						                </td>
+						                <td class="text-center"><span class="label label-info">Low</span></td>
+						                <td>April 21, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+													<span class="sr-only">10% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong class="text-danger">3</strong> days left</td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Nunc tincidunt consectetur quam et venenatis</a>
+						                    <span>HTML / CSS changes</span>
+						                </td>
+						                <td class="text-center"><span class="label label-info">Low</span></td>
+						                <td>April 19, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+													<span class="sr-only">100% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong>Complete!</strong></td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Phasellus quis sagittis orci, vitae placerat mauris</a>
+						                    <span>Design &amp; UI concepts</span>
+						                </td>
+						                <td class="text-center"><span class="label label-info">Low</span></td>
+						                <td>April 11, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+													<span class="sr-only">100% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong>Complete!</strong></td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Nunc sit amet arcu euismod nulla luctus pulvinar in at enim</a>
+						                    <span>Design &amp; UI concepts</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>April 1, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+													<span class="sr-only">100% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong>Complete!</strong></td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Duis convallis ornare risus, sit amet tincidunt elit euismod vel</a>
+						                    <span>HTML / CSS changes</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>March 8, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+													<span class="sr-only">100% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong>Complete!</strong></td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						            <tr>
+						                <td class="task-desc">
+						                    <a href="task_detailed.html">Cras eu mauris adipiscing massa porttitor </a>
+						                    <span>Design &amp; UI concepts</span>
+						                </td>
+						                <td class="text-center"><span class="label label-danger">High</span></td>
+						                <td>March 2, 2013</td>
+						                <td>
+						                    <div class="progress progress-micro">
+												<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+													<span class="sr-only">100% Complete</span>
+												</div>
+											</div>
+						                </td>
+						                <td><i class="icon-clock"></i> <strong>Complete!</strong></td>
+							            <td class="text-center">
+							                <div class="btn-group">
+								                <button type="button" class="btn btn-icon btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-cog4"></i></button>
+												<ul class="dropdown-menu icons-right dropdown-menu-right">
+													<li><a href="#"><i class="icon-quill2"></i> Edit task</a></li>
+													<li><a href="#"><i class="icon-share2"></i> Reassign</a></li>
+													<li><a href="#"><i class="icon-checkmark3"></i> Complete</a></li>
+													<li><a href="#"><i class="icon-stack"></i> Archive</a></li>
+												</ul>
+							                </div>
+							            </td>
+						            </tr>
+						        </tbody>
+						    </table>
+						</div>
+					</div>
+					<!-- /tasks table -->
+
+		        </div>
+		        <!-- /second tab -->
+
+		        <!-- Third tab -->
+		        <div class="tab-pane fade" id="thiet-lap-chuc-nang">		           
+		            <h6 class="heading-hr"><i class="icon-equalizer2"></i> @ABM.Resources.vi_VN.M_Personalization_L_SettingMenu</h6> 
+                    
+                    <div class="form-group">
+						<div class="row">
+						    @*<div class="col-md-7">
+						        <label class="col-sm-2 control-label">Màu sắc: </label>
+						        <label class="radio-inline">
+						            <input type="radio" name="inline-radio" class="styled" />
+						            Mặc định
+						        </label>
+						        <label class="radio-inline">
+						            <input type="radio" name="inline-radio" class="styled" />
+						            Xanh / Cam
+						        </label>
+						        <label class="radio-inline">
+						            <input type="radio" name="inline-radio" class="styled" />
+						            Đen / Trắng
+						        </label>                                
+						    </div>*@
+
+						    <div id="regionSetting" class="col-md-12">
+						        <label class="checkbox-inline pull-right">
+		                            <input type="checkbox" class="switch" data-on-label="Cá nhân" data-off-label="Mặc định" data-on="danger" data-off="success" >
+		                        </label>
+						        <button id="btnSaveSetting" onclick="system.userSetting.save();" type="button" class="btn btn-success pull-right mr5">@ABM.Resources.vi_VN.Btn_Save_Personalization</button>		                         
+						    </div>
+						</div>
+					</div>                   
+                    		           
+		            <!-- Booking -->
+		            <div class="block-inner">
+		                <div class="block-inner">
+		                    <h6 class="heading-hr text-success">
+		                        <i class="icon-tag5"></i>@ABM.Resources.vi_VN.M_Personalization_L_SettingMenu_Booking <small class="display-block">@ABM.Resources.vi_VN.M_Personalization_L_SettingMenu_Booking_Desc</small>
+		                    </h6>
+		                </div>
+		                <div id="booking">@ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" /></div>
+		            </div>		        
+		            <!-- /booking -->
+                    
+		            <!-- HDCN -->
+		            <div class="block-inner">
+		                <div class="block-inner">
+		                    <h6 class="heading-hr text-danger">
+		                        <i class="icon-file-powerpoint"></i>@ABM.Resources.vi_VN.M_Personalization_L_SettingMenu_HDCN <small class="display-block">@ABM.Resources.vi_VN.M_Personalization_L_SettingMenu_HDCN_Desc</small>
+		                    </h6>
+		                </div>
+		                <div id="hdcn">@ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" /></div>
+		            </div>		        
+		            <!-- /hdcn -->
+                    
+		            <!-- Thực chạy -->
+		            <div class="block-inner">
+		                <div class="block-inner">
+		                    <h6 class="heading-hr text-info">
+		                        <i class="icon-stats-up"></i>@ABM.Resources.vi_VN.M_Personalization_L_SettingMenu_ThucChay <small class="display-block">@ABM.Resources.vi_VN.M_Personalization_L_SettingMenu_ThucChay_Desc</small>
+		                    </h6>
+		                </div>
+		                <div id="thucchay">@ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" /></div>
+		            </div>		        
+		            <!-- /thực chạy -->
+                    
+                    <!-- Báo cáo Kênh -->
+		            <div class="block-inner">
+		                <div class="block-inner">
+		                    <h6 class="heading-hr text-warning">
+		                        <i class="icon-newspaper"></i>@ABM.Resources.vi_VN.M_Personalization_L_SettingMenu_BaoCaoKenh <small class="display-block">@ABM.Resources.vi_VN.M_Personalization_L_SettingMenu_BaoCaoKenh_Desc</small>
+		                    </h6>
+		                </div>
+		                <div id="bao-cao-kenh">@ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" /></div>
+		            </div>		        
+		            <!-- /báo cáo Kênh -->
+                        
+		        </div>
+		        <!-- /third tab -->
+
+	        </div>
+	    </div>
+	    <!-- /page tabs -->
+
+	</div>
+</div>
+<!-- /profile grid -->
+
+
+<script type="text/javascript">
+    $(function () {
+        system.userSetting.init();
+    });
+</script>

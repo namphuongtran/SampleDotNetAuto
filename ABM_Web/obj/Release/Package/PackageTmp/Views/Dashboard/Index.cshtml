@@ -1,0 +1,37 @@
+﻿@using ABM.Common
+@{
+    ViewBag.Title = ".: Hanot Pest Control Company - Bảng điều khiển :.";
+    Layout = "~/Views/Site.cshtml";
+}
+
+<!-- Page header -->
+<div class="page-header">
+	<div class="page-title">
+		<h3>@ABM.Resources.vi_VN.Breadcrumb_Dashboard <small>@ABM.Resources.vi_VN.L_Hello @Session[Constants.SessionFullname]! @ABM.Resources.vi_VN.L_BestWishForYou</small></h3>
+	</div>	
+</div>
+<!-- /page header -->
+
+
+<!-- Breadcrumbs line -->
+<div class="breadcrumb-line">
+	<ul class="breadcrumb">
+		<li><a href="/@Constants.Dashboard">@ABM.Resources.vi_VN.Breadcrumb_Dashboard</a></li>		
+	</ul>
+
+	<div class="visible-xs breadcrumb-toggle">
+		<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+	</div>	
+</div>
+<!-- /breadcrumbs line -->
+
+
+<!-- Info blocks -->
+<ul class="info-blocks"></ul>
+<!-- /info blocks -->
+
+<script type="text/javascript">
+    $(function () {
+        common.dynamicDashboard();
+    });
+</script>  

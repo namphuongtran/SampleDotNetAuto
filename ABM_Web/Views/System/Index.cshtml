@@ -1,0 +1,39 @@
+﻿@using ABM.Common
+@{
+    ViewBag.Title = ".: Hanot Pest Control Company | Quản trị hệ thống :.";
+    Layout = "~/Views/Site.cshtml";
+}
+
+
+<!-- Page header -->
+<div class="page-header">
+	<div class="page-title">
+		<h3>@ABM.Resources.vi_VN.M_System_Page_Title <small>@ABM.Resources.vi_VN.M_System_Page_Title_Desc</small></h3>
+	</div>
+</div>
+<!-- /page header -->
+
+
+<!-- Breadcrumbs line -->
+<div class="breadcrumb-line">
+	<ul class="breadcrumb">
+		<li><a href="/@Constants.Dashboard">@ABM.Resources.vi_VN.Breadcrumb_ABM</a></li>
+		<li class="active"><a href="/@Constants.System">@ABM.Resources.vi_VN.M_System_Page_Title</a></li>
+	</ul>
+
+	<div class="visible-xs breadcrumb-toggle">
+		<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse" data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+	</div>	
+</div>
+<!-- /breadcrumbs line -->
+
+
+@RenderPage(ViewData["Type"].ToString())
+
+
+<script type="text/javascript">
+    $(function() {
+        system.activeMenu();        
+    });
+</script>
+

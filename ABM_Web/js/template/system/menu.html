@@ -1,0 +1,358 @@
+﻿<script id="tpl-list-menu" type="text/html">            
+    {{#Data}}           
+    <tr>    
+        <td class="aligncenter"><button type="button" class="btn btn-default btn-icon"><i class="{{CtrlKey}}"></i></button></td>        
+        <td class="aligncenter">{{ItemIndex}}</td>        
+        <td>{{Name}}</td>        
+        <td class="aligncenter">{{Level}}</td>        
+        <td class="aligncenter">            
+            <div class="btn-group">{{{ImageStatus}}}</div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-icon btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="icon-grid"></i></button>
+                <ul class="dropdown-menu icons-right dropdown-menu-right">
+                    <li><a onclick="system.menu.manipulate(systemConfig.action.getById, {{AdminMenuId}});"><i class="icon-pencil3"></i> Sửa</a></li>
+                    <li><a onclick="system.menu.manipulate(systemConfig.action.del, {{AdminMenuId}});"><i class="icon-remove3"></i> Xóa</a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>   
+    {{/Data}}
+
+    {{^Data}}
+    <tr class="level" abm_action="no">
+        <td colspan="4">Không có dữ liệu!</td>   
+    </tr>        
+    {{/Data}}
+</script>
+
+
+<script id="tpl-list-group-menu-permission" type="text/html">        
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> Phân quyền chức năng</h4>
+    </div>
+
+    <div class="modal-body with-padding">
+        <div class="block-inner text-danger">
+            <h6 id="groupPermission" class="heading-hr"></h6>
+        </div>
+
+        <div class="panel panel-default">
+            <div id="lstGroupMenuPermission">
+                <table class="table table-bordered table-striped datatable-selectable">
+                    <thead>
+                        <tr>
+                            <th class="w45 aligncenter"><input type="checkbox" onclick="system.userSetting.toogleCheckbox(this);" class="styled"/></th>
+                            <th class="w45 aligncenter">STT</th>
+                            <th>Tên chức năng</th>                
+                            <th class="aligncenter">Trạng thái</th>                
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#Data}}           
+                        <tr id="{{AdminMenuId}}">    
+                            <td class="w45 aligncenter"><input type="checkbox" onclick="system.userSetting.toogleCheckbox(this);" class="styled {{ClassId}}" value="{{AdminMenuId}}"/></td>
+                            <td class="w45 aligncenter">{{ItemIndex}}</td>
+                            <td>{{Name}}</td>                
+                            <td class="aligncenter"><div class="btn-group mr5">{{{ImageStatus}}}</div></td>
+                        </tr>   
+                        {{/Data}}
+
+                        {{^Data}}
+                        <tr>
+                            <td colspan="3">Không có dữ liệu!</td>   
+                        </tr>        
+                        {{/Data}} 
+                    </tbody>
+                </table>             
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-footer">			        
+        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>					
+        <button type="button" onclick="system.groupMenuPermission.save();" class="btn btn-success">Lưu lại</button>
+    </div>  
+</script>
+
+
+<script id="tpl-form-menu" type="text/html">        
+    <form class="validate" action="#" role="form" method="post">
+        <!-- Menu -->	    
+        <div class="block-inner text-danger">
+            <h6 class="heading-hr">
+                <i class="icon-menu2"></i> Chức năng <small class="display-block">Cấu hình chức năng của hệ thống</small>
+            </h6>
+        </div>
+			
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Tên chức năng <span class="mandatory">*</span></label>
+                    <input type="text" name="Name" tabindex="1" class="form-control">
+                </div>
+
+                <div class="col-md-5">
+                    <label>Chức năng cha:</label>
+                    <input id="ddlMenu" tabindex="2" type="hidden"/>                    
+                </div>
+                
+                <div class="col-md-2">
+                    <label>Trạng thái:</label>
+                    <input id="ddlStatus" tabindex="3" type="hidden"/>                    
+                </div>
+            </div>
+        </div>                    
+            
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Đường dẫn (UserControl): <span class="mandatory">*</span></label>
+                    <input type="text" name="CtrlSource" tabindex="4" class="form-control">
+                </div>
+
+                <div class="col-md-5">
+                    <label>Đường dẫn (Rewrite Url):</label>
+                    <input type="text" name="Url" tabindex="5" class="form-control">
+                </div>
+                    
+                <div class="col-md-2">
+                    <label>Độ ưu tiên:</label>
+                    <input type="text" name="Priority" value="1" tabindex="6" class="form-control">
+                </div>                                
+            </div>
+        </div>            
+        
+        <div class="form-group">
+            <div class="row">   
+                <div class="col-md-5">
+                    <label>Phân loại nhóm trong hệ thống: <span class="mandatory">*</span></label>
+                    <input id="ddlMenuType" tabindex="7" type="hidden"/>     
+                </div>
+            
+                <div class="col-md-5">
+                    <label>Biểu tượng: <span class="mandatory">*</span></label>
+                    <input type="text" name="CtrlKey" tabindex="8" class="form-control">                    
+                </div>
+            
+                <div class="col-md-2 pt30">
+                    <input type="checkbox" name="FormatIsDefault" tabindex="9" class="styled" />
+                    <label>Mặc định</label>                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Mô tả: </label>
+            <textarea rows="3" cols="5" name="Description" tabindex="10" class="form-control"></textarea>   
+        </div>        	    
+        <!-- /menu -->
+                
+        <!-- Article & Developers -->
+        <div class="form-group">
+            <div class="row">                
+
+                <!-- Article -->      
+                <div id="articleInMenu" class="col-md-6">                                  
+                    <div class="block-inner text-danger">
+                        <h6 class="heading-hr">
+                            <i class="icon-support"></i> Hướng dẫn <small class="display-block">Thiết lập bài viết hướng dẫn cho chức năng</small>
+                        </h6>
+                    </div>   
+                    
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input id="ddlCategory" tabindex="11" type="hidden"/>    
+                            </div>                            
+                            <div class="col-md-6">
+                                <input id="txtSearchArticle" type="text" tabindex="12" class="form-control" placeholder="Tiêu đề bài viết">
+                            </div>                            
+                        </div>                                                            
+                    </div>                         
+                        
+                    <div class="form-group">                        
+                        <div class="block well"></div>                        
+                    </div>                                                                          
+                </div>
+                <!-- /article -->
+                
+                <!-- Developers --> 
+                <div id="developerInMenu" class="col-md-6">                                                           
+                    <div class="block-inner text-danger">
+                        <h6 class="heading-hr">
+                            <i class="icon-bubble-user"></i> Nhà phát triển <small class="display-block">Thông tin người phát triển chức năng</small>
+                        </h6>
+                    </div>
+
+                    <div class="form-group">        
+                        <div class="row">
+                            <div class="col-md-1">
+                                <button type="button" onclick="system.developer.manipulate(systemConfig.action.create, 0)" class="btn btn-icon btn-default">
+                                    <i class="icon-plus-circle"></i>
+                                </button>    
+                            </div>
+                            <div class="col-md-11">
+                                <input id="txtSearchDeveloper" type="text" tabindex="13" class="form-control" placeholder="Tên người phát triển">                                
+                            </div>                                                
+                        </div>           
+                    </div>                                                                                                                                                            
+                    
+                    <div class="block">                            
+                        <ul class="message-list"></ul>
+                    </div>
+                </div>                                                    
+                <!-- /developers -->
+            </div>
+            
+            <div class="form-actions text-right">
+                <input type="button" value="Quay lại" onclick="system.menu.manipulate(systemConfig.action.back, 0);" class="btn btn btn-default" tabindex="15">
+                <input type="button" value="Lưu lại" onclick="system.menu.manipulate(systemConfig.action.save, 0);" class="btn btn-success" tabindex="14">
+            </div> 
+            <!-- /button action -->
+        </div>                    
+        <!-- /article & developers -->                      
+    </form>   
+</script>
+
+
+<script id="tpl-get-menu" type="text/html">        
+    {{#Data}}
+    <form class="validate" action="#" role="form" method="post">
+        <!-- Menu -->	    
+        <div class="block-inner text-danger">
+            <h6 class="heading-hr">
+                <i class="icon-menu2"></i> Chức năng <small class="display-block">Cấu hình chức năng của hệ thống</small>
+            </h6>
+        </div>
+			
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Tên chức năng <span class="mandatory">*</span></label>
+                    <input type="text" name="Name" value="{{Name}}" tabindex="1" class="form-control">
+                </div>
+
+                <div class="col-md-5">
+                    <label>Chức năng cha:</label>
+                    <input id="ddlMenu" tabindex="2" type="hidden"/>                    
+                </div>
+                
+                <div class="col-md-2">
+                    <label>Trạng thái:</label>
+                    <input id="ddlStatus" tabindex="3" type="hidden"/>
+                </div>
+            </div>
+        </div>                    
+            
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-5">
+                    <label>Đường dẫn (UserControl): <span class="mandatory">*</span></label>
+                    <input type="text" name="CtrlSource" value="{{CtrlSource}}" tabindex="4" class="form-control">
+                </div> 
+
+                <div class="col-md-5">
+                    <label>Trạng thái (Rewrite Url):</label>
+                    <input type="text" name="Url" value="{{Url}}" tabindex="5" class="form-control">
+                </div>
+                    
+                <div class="col-md-2">
+                    <label>Độ ưu tiên:</label>
+                    <input type="text" name="Priority" value="{{Priority}}" tabindex="6" class="form-control">
+                </div>                                
+            </div>
+        </div>        
+        
+        <div class="form-group">
+            <div class="row">   
+                <div class="col-md-5">
+                    <label>Phân loại nhóm trong hệ thống: <span class="mandatory">*</span></label>
+                    <input id="ddlMenuType" tabindex="7" type="hidden"/>     
+                </div>
+            
+                <div class="col-md-5">
+                    <label>Biểu tượng: <span class="mandatory">*</span></label>
+                    <input type="text" name="CtrlKey" value="{{CtrlKey}}" tabindex="8" class="form-control">
+                </div>
+            
+                <div class="col-md-2 pt30">
+                    <input type="checkbox" name="FormatIsDefault" tabindex="9" class="styled" />
+                    <label>Mặc định</label>                    
+                </div>
+            </div>
+        </div>       
+        
+        <div class="form-group">
+            <label>Mô tả: </label>
+            <textarea rows="3" cols="5" name="Description" tabindex="10" class="form-control">{{Description}}</textarea>   
+        </div>        	    
+        <!-- /menu -->
+                
+        <!-- Article & Developers -->
+        <div class="form-group">
+            <div class="row">                                
+
+                <!-- Article -->      
+                <div id="articleInMenu" class="col-md-6">                                                                          
+                    <div class="block-inner text-danger">
+                        <h6 class="heading-hr">
+                            <i class="icon-support"></i> Hướng dẫn <small class="display-block">Thiết lập bài viết hướng dẫn cho chức năng</small>
+                        </h6>
+                    </div>                                
+                    
+                    <div id="regionSearchArticleInMenu" class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input id="ddlCategory" tabindex="11" type="hidden"/>    
+                            </div>                            
+                            <div class="col-md-6">
+                                <input id="txtSearchArticle" type="text" tabindex="12" class="form-control" placeholder="Tiêu đề bài viết">
+                            </div>                            
+                        </div>                                                            
+                    </div>                         
+                        
+                    <div class="form-group">                        
+                        <div class="block well"></div>                        
+                    </div>                                                                          
+                </div>
+                <!-- /article -->
+                
+                <!-- Developers --> 
+                <div id="developerInMenu" class="col-md-6">                                                           
+                    <div class="block-inner text-danger">
+                        <h6 class="heading-hr">
+                            <i class="icon-bubble-user"></i> Nhà phát triển <small class="display-block">Thông tin người phát triển chức năng</small>
+                        </h6>
+                    </div>
+
+                    <div class="form-group">        
+                        <div class="row">
+                            <div class="col-md-1">
+                                <button type="button" onclick="system.developer.manipulate(systemConfig.action.create, 0)" class="btn btn-icon btn-default">
+                                    <i class="icon-plus-circle"></i>
+                                </button>    
+                            </div>
+                            <div class="col-md-11">
+                                <input id="txtSearchDeveloper" type="text" tabindex="13" class="form-control" placeholder="Tên người phát triển">                                
+                            </div>                                                
+                        </div>           
+                    </div>                                                                                                                                                            
+                    
+                    <div class="block">                            
+                        <ul class="message-list"></ul>
+                    </div>
+                </div>                                                    
+                <!-- /developers -->
+            </div>
+            
+            <div class="form-actions text-right">
+                <input type="button" value="Quay lại" onclick="system.menu.manipulate(systemConfig.action.back, 0);" class="btn btn btn-default" tabindex="15">
+                <input type="button" value="Lưu lại" onclick="system.menu.manipulate(systemConfig.action.save, {{AdminMenuId}});" class="btn btn-success" tabindex="14">
+            </div>  
+            <!-- /button action -->
+        </div>                    
+        <!-- /article & developers -->  
+    </form>  
+    {{/Data}}
+</script>

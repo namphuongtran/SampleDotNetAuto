@@ -1,0 +1,71 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h6 class="panel-title"><i class="icon-table"></i>@ABM.Resources.vi_VN.M_User_Panel_Title</h6>
+        <span class="pull-right label label-danger"></span>
+    </div>    
+    <div class="dataTables_wrapper">
+        <div class="datatable-header">
+            <div class="DTTT_container">                                
+                <div class="btn-group dropup">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-command"></i> @ABM.Resources.vi_VN.Btn_Action 
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu icons-right">
+                        <li><a onclick="system.user.manipulate(systemConfig.action.create, 0);"><i class="icon-plus-circle"></i> @ABM.Resources.vi_VN.Btn_Create</a></li>
+                        <li><a onclick="system.user.manipulate(systemConfig.action.locked);"><i class="icon-lock"></i> @ABM.Resources.vi_VN.Btn_Locked</a></li>
+                        <li><a onclick="system.user.manipulate(systemConfig.action.unLocked);"><i class="icon-unlocked"></i> @ABM.Resources.vi_VN.Btn_UnLocked</a></li>
+                    </ul>                                                                
+                </div>     
+            </div>
+                        
+            <div class="dataTables_filter">
+                <label>
+                    <span>@ABM.Resources.vi_VN.L_Search:</span>
+                    <input id="txtSearch" type="search" placeholder="@ABM.Resources.vi_VN.L_TypeToFilter" />
+                    <input id="ddlStatus" type="hidden"/>
+                </label>
+            </div>
+
+            <div class="dataTables_length">
+                <label>
+                    <span>@ABM.Resources.vi_VN.L_PageNumber:</span>                                
+                    <input id="ddlPageSize" type="hidden"/>        
+                </label>
+            </div>
+        </div>
+        <div class="datatable-scroll">
+            <table class="table dataTable">
+                <thead>
+                    <tr role="row">
+                        <th class="w45 aligncenter">@ABM.Resources.vi_VN.Table_Col_RowNumber</th>
+				        <th>@ABM.Resources.vi_VN.M_User_Table_Col_FullName</th>
+                        <th>@ABM.Resources.vi_VN.M_User_Table_Col_Username</th>				        
+                        <th>@ABM.Resources.vi_VN.M_User_Table_Col_Email</th>				        
+                        <th>@ABM.Resources.vi_VN.M_User_Table_Col_Mobile</th>				                                
+                        <th class="w120">@ABM.Resources.vi_VN.Table_Col_Action</th>
+                    </tr>
+                </thead>                    
+                <tbody>                        
+                    <tr class="odd">
+                        <td valign="top" colspan="6" class="dataTables_empty">@ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="datatable-footer">
+            <div class="dataTables_info"></div>
+            <div class="dataTables_paginate paging_full_numbers">
+                <ul class="pagination"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input id="hfCurrentPageIndex" type="hidden"/>
+
+<script type="text/javascript">
+    $(function() {
+        system.user.init();                
+    });
+</script>

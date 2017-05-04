@@ -1,0 +1,4 @@
+C:\3. Working\backend\ABM.Common\bin\Release\ABM.Common.dll
+C:\3. Working\backend\ABM.Common\bin\Release\ABM.Common.pdb
+C:\3. Working\backend\ABM.Common\obj\Release\ABM.Common.dll
+C:\3. Working\backend\ABM.Common\obj\Release\ABM.Common.pdb

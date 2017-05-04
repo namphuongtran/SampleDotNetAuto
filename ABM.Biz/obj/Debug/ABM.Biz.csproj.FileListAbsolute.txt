@@ -1,0 +1,24 @@
+C:\3. Working\backend\ABM.Biz\bin\Debug\ABM.Biz.dll
+C:\3. Working\backend\ABM.Biz\bin\Debug\ABM.Biz.pdb
+C:\3. Working\backend\ABM.Biz\bin\Debug\ABM.Common.dll
+C:\3. Working\backend\ABM.Biz\bin\Debug\ABM.Dao.dll
+C:\3. Working\backend\ABM.Biz\bin\Debug\ABM.Entity.dll
+C:\3. Working\backend\ABM.Biz\bin\Debug\MySql.Data.dll
+C:\3. Working\backend\ABM.Biz\bin\Debug\ABM.Common.pdb
+C:\3. Working\backend\ABM.Biz\bin\Debug\ABM.Dao.pdb
+C:\3. Working\backend\ABM.Biz\bin\Debug\ABM.Entity.pdb
+C:\3. Working\backend\ABM.Biz\obj\Debug\ABM.Biz.csprojResolveAssemblyReference.cache
+C:\3. Working\backend\ABM.Biz\obj\Debug\ABM.Biz.dll
+C:\3. Working\backend\ABM.Biz\obj\Debug\ABM.Biz.pdb
+E:\Working\backend\ABM.Biz\bin\Debug\ABM.Biz.dll
+E:\Working\backend\ABM.Biz\bin\Debug\ABM.Biz.pdb
+E:\Working\backend\ABM.Biz\bin\Debug\ABM.Common.dll
+E:\Working\backend\ABM.Biz\bin\Debug\ABM.Dao.dll
+E:\Working\backend\ABM.Biz\bin\Debug\ABM.Entity.dll
+E:\Working\backend\ABM.Biz\bin\Debug\MySql.Data.dll
+E:\Working\backend\ABM.Biz\bin\Debug\ABM.Common.pdb
+E:\Working\backend\ABM.Biz\bin\Debug\ABM.Dao.pdb
+E:\Working\backend\ABM.Biz\bin\Debug\ABM.Entity.pdb
+E:\Working\backend\ABM.Biz\obj\Debug\ABM.Biz.csprojResolveAssemblyReference.cache
+E:\Working\backend\ABM.Biz\obj\Debug\ABM.Biz.dll
+E:\Working\backend\ABM.Biz\obj\Debug\ABM.Biz.pdb

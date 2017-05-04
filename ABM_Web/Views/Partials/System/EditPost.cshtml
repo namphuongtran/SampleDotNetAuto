@@ -1,0 +1,23 @@
+﻿@using ABM.Common
+<!-- Post article -->
+<form id="formArticle" class="validate" action="#" role="form" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h6 class="panel-title"><i class="icon-bubble4"></i>Sửa bài viết</h6>
+        </div>
+        <div class="panel-body">
+        
+        </div>
+    </div>
+</form>
+<!-- /post article -->
+<h1></h1>
+
+<script type="text/javascript" src="/js/plugins/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {        
+        system.article.manipulate(systemConfig.action.getById, @Utils.ToInt32(Request.RequestContext.RouteData.Values["id"]));
+    });
+</script>

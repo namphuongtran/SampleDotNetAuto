@@ -1,0 +1,200 @@
+﻿<script id="tpl-list-user" type="text/html">            
+    {{#Data}}           
+    <tr id="{{AdminUserId}}">    
+        <td class="aligncenter">{{ItemIndex}}</td>
+        <td>{{FullName}}</td>
+        <td>{{Username}}</td>
+        <td>{{Email}}</td>        
+        <td>{{Mobile}}</td>        
+        <td class="aligncenter command">
+            {{{ImageStatus}}}                 
+            <div class="btn-group">
+                <button type="button" class="btn btn-icon btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="icon-grid"></i></button>
+                <ul class="dropdown-menu icons-right dropdown-menu-right ">                                        
+                    <li><a onclick="system.user.manipulate(systemConfig.action.formChangePassword, {{AdminUserId}});"><i class="icon-key2"></i> Đổi mật khẩu</a></li>                    
+                    <li><a onclick="system.user.manipulate(systemConfig.action.getById, {{AdminUserId}});"><i class="icon-pencil3"></i> Sửa</a></li>
+                    <li><a onclick="system.user.manipulate(systemConfig.action.del, {{AdminUserId}});"><i class="icon-remove3"></i> Xóa</a></li>
+                </ul>
+            </div>  
+        </td>
+    </tr>   
+    {{/Data}}
+
+    {{^Data}}
+    <tr class="level" abm_action="no">
+        <td colspan="6">Không có dữ liệu!</td>   
+    </tr>        
+    {{/Data}}
+</script>
+
+
+<script id="tpl-user-setting" type="text/html">                    
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th class="w45 aligncenter"><input type="checkbox" onclick="system.userSetting.toogleCheckbox(this);" class="styled"/></th>                                            
+                <th class="w45"></th>
+                <th class="w45 aligncenter">STT</th>                                        
+                <th>Tên chức năng</th>                                                            
+                <th class="w140 aligncenter">Thông tin chung</th>    
+            </tr>
+        </thead>
+        <tbody>
+            {{#Data}}
+            <tr id="{{AdminMenuId}}">
+                <td class="aligncenter"><input type="checkbox" onclick="system.userSetting.toogleCheckbox(this);" class="styled {{ClassId}}" value="{{AdminMenuId}}"/></td>                    
+                <td class="aligncenter">{{{Icon}}}</td>
+                <td class="aligncenter">{{ItemIndex}}</td>                                    
+                <td>{{Name}}</td>                                    
+                <td class="aligncenter">                    
+                    <button type="button" class="btn btn-icon btn-default" data-container="body" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="left" data-content="{{Tutorial}}" title="Hướng dẫn"><i class="icon-support"></i></button>
+                    <button type="button" class="btn btn-icon btn-default" data-container="body" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="left" data-content="{{IconStatus}}" title="Thời gian"><i class="icon-clock"></i></button>
+                    <button type="button" class="btn btn-icon btn-default" data-container="body" data-toggle="popover" data-html="true" data-trigger="hover" data-placement="left" data-content="{{Developers}}" title="Thông tin nhà phát triển"><i class="icon-code"></i></button>
+                </td>                                        
+            </tr>
+            {{/Data}}                
+        </tbody>
+    </table>                        
+</script>
+
+
+<script id="tpl-change-password" type="text/html">    
+    {{#Data}}  
+    <form class="validate" action="#" role="form" method="post">        
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> Thành viên</h4>
+        </div>
+
+        <!-- Form inside modal -->
+        <div class="modal-body with-padding">
+            <div class="block-inner text-danger">
+                <h6 class="heading-hr">
+                    <i class="icon-menu2"></i>Đổi mật khẩu <small class="display-block">(*) Bắt buộc phải nhập</small>
+                </h6>
+            </div>
+			
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Mật khẩu mới: <span class="mandatory">*</span></label>
+                        <input type="password" name="Password1" tabindex="1" class="form-control"/>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Nhập lại mật khẩu mới: <span class="mandatory">*</span></label>
+                        <input type="password" name="Password2" tabindex="2" class="form-control"/>
+                    </div>                                    
+                </div>
+            </div>                                       
+        </div>   
+        
+        <div class="modal-footer">	
+            <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="4">Đóng</button>	
+            <input type="button" value="Lưu lại" onclick="system.user.manipulate(systemConfig.action.changePassword, {{AdminUserId}});" class="btn btn-success" tabindex="3">
+        </div> 
+    </form>   
+    {{/Data}}    
+</script>
+
+
+<script id="tpl-form-user" type="text/html">    
+    <form class="validate" action="#" role="form" method="post">        
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> Thành viên</h4>
+        </div>
+
+        <!-- Form inside modal -->
+        <div class="modal-body with-padding">
+            <div class="block-inner text-danger">
+                <h6 class="heading-hr">
+                    <i class="icon-menu2"></i>Thông tin thành viên <small class="display-block">Bạn vui lòng điền thông tin thành viên</small>
+                </h6>
+            </div>
+			
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Tên đăng nhập: <span class="mandatory">*</span></label>
+                        <input type="text" name="Username" tabindex="1" class="form-control"/>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Mật khẩu: <span class="mandatory">*</span></label>
+                        <input type="password" name="Password" tabindex="2" class="form-control"/>
+                    </div>                                    
+                </div>
+            </div>                    
+            
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Tên đầy đủ:</label>
+                        <input type="text" name="Fullname" tabindex="4" class="form-control"/>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Thư điện tử:</label>
+                        <input type="text" name="Email" tabindex="5" class="form-control"/>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <label>Điện thoại:</label>
+                        <input type="text" name="Mobile" tabindex="6" class="form-control"/>
+                    </div>                                
+                </div>
+            </div>            
+        </div>   
+        
+        <div class="modal-footer">	
+            <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="8">Đóng</button>	
+            <input type="button" value="Lưu lại" onclick="system.user.manipulate(systemConfig.action.save, 0);" class="btn btn-success" tabindex="7">
+        </div> 
+    </form>   
+</script>
+
+
+<script id="tpl-get-user" type="text/html">      
+    {{#Data}}              
+    <form class="validate" action="#" role="form" method="post">        
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> Thành viên</h4>
+        </div>
+
+        <!-- Form inside modal -->
+        <div class="modal-body with-padding">
+            <div class="block-inner text-danger">
+                <h6 class="heading-hr">
+                    <i class="icon-menu2"></i>Sửa thông tin thành viên <small class="display-block">Bạn vui lòng điền thông tin thành viên</small>
+                </h6>
+            </div>
+            			           
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Tên đầy đủ:</label>
+                        <input type="text" name="Fullname" value="{{Fullname}}" tabindex="4" class="form-control"/>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label>Thư điện tử:</label>
+                        <input type="text" name="Email" value="{{Email}}" tabindex="5" class="form-control"/>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <label>Điện thoại:</label>
+                        <input type="text" name="Mobile" value="{{Mobile}}" tabindex="6" class="form-control"/>
+                    </div>                                
+                </div>
+            </div>            
+        </div>
+                            
+        <div class="modal-footer">	
+            <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="8">Đóng</button>	
+            <input type="button" value="Lưu lại" onclick="system.user.manipulate(systemConfig.action.save, {{AdminUserId}});" class="btn btn-success" tabindex="7">
+        </div>         
+    </form>
+    {{/Data}}
+</script>

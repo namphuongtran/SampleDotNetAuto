@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F963DF95-8484-41C6-AE8F-78F4FC60A095}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ABM.Entity</RootNamespace>
+    <AssemblyName>ABM.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="JsonResponse.cs" />
+    <Compile Include="ModelParams.cs" />
+    <Compile Include="Permission\AdvEntity.cs" />
+    <Compile Include="Permission\GroupMenuPermissionEntity.cs" />
+    <Compile Include="Permission\GroupUserEntity.cs" />
+    <Compile Include="Permission\InfoBlockEntity.cs" />
+    <Compile Include="Permission\MenuDeveloperEntity.cs" />
+    <Compile Include="Permission\ArticleEntity.cs" />
+    <Compile Include="Permission\CategoryEntity.cs" />
+    <Compile Include="Permission\DeveloperEntity.cs" />
+    <Compile Include="Permission\ErrorEntity.cs" />
+    <Compile Include="Permission\GroupEntity.cs" />
+    <Compile Include="Permission\MenuEntity.cs" />
+    <Compile Include="Permission\SKUsEntity.cs" />
+    <Compile Include="Permission\SKUFileEntity.cs" />
+    <Compile Include="Permission\SKUImageEntity.cs" />
+    <Compile Include="Permission\SKURelatedEntity.cs" />
+    <Compile Include="Permission\UserEntity.cs" />
+    <Compile Include="Permission\UserSettingEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ABM.Common\ABM.Common.csproj">
+      <Project>{4f92a49e-41e6-4c2c-a90a-ef512b884d22}</Project>
+      <Name>ABM.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

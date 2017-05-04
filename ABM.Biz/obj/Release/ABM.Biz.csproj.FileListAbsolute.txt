@@ -1,0 +1,24 @@
+C:\3. Working\backend\ABM.Biz\bin\Release\ABM.Biz.dll
+C:\3. Working\backend\ABM.Biz\bin\Release\ABM.Biz.pdb
+C:\3. Working\backend\ABM.Biz\bin\Release\ABM.Common.dll
+C:\3. Working\backend\ABM.Biz\bin\Release\ABM.Dao.dll
+C:\3. Working\backend\ABM.Biz\bin\Release\ABM.Entity.dll
+C:\3. Working\backend\ABM.Biz\bin\Release\MySql.Data.dll
+C:\3. Working\backend\ABM.Biz\bin\Release\ABM.Common.pdb
+C:\3. Working\backend\ABM.Biz\bin\Release\ABM.Dao.pdb
+C:\3. Working\backend\ABM.Biz\bin\Release\ABM.Entity.pdb
+C:\3. Working\backend\ABM.Biz\obj\Release\ABM.Biz.csprojResolveAssemblyReference.cache
+C:\3. Working\backend\ABM.Biz\obj\Release\ABM.Biz.dll
+C:\3. Working\backend\ABM.Biz\obj\Release\ABM.Biz.pdb
+E:\Working\backend\ABM.Biz\bin\Release\ABM.Biz.dll
+E:\Working\backend\ABM.Biz\bin\Release\ABM.Biz.pdb
+E:\Working\backend\ABM.Biz\bin\Release\ABM.Common.dll
+E:\Working\backend\ABM.Biz\bin\Release\ABM.Dao.dll
+E:\Working\backend\ABM.Biz\bin\Release\ABM.Entity.dll
+E:\Working\backend\ABM.Biz\bin\Release\MySql.Data.dll
+E:\Working\backend\ABM.Biz\bin\Release\ABM.Common.pdb
+E:\Working\backend\ABM.Biz\bin\Release\ABM.Dao.pdb
+E:\Working\backend\ABM.Biz\bin\Release\ABM.Entity.pdb
+E:\Working\backend\ABM.Biz\obj\Release\ABM.Biz.csprojResolveAssemblyReference.cache
+E:\Working\backend\ABM.Biz\obj\Release\ABM.Biz.dll
+E:\Working\backend\ABM.Biz\obj\Release\ABM.Biz.pdb

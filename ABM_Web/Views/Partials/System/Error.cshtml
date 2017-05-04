@@ -1,0 +1,82 @@
+﻿<!-- Page tabs -->
+<div class="tabbable page-tabs">    
+    <!-- Error tab -->
+    <div class="tab-pane active fade in" id="chuyen-muc">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title"><i class="icon-table"></i>@ABM.Resources.vi_VN.M_Error_Panel_Title</h6>
+                <span class="pull-right label label-danger"></span>
+            </div>    
+            <div class="dataTables_wrapper">
+                <div class="datatable-header">                    
+                    <div class="dataTables_filter">
+                        <label>
+                            <span>@ABM.Resources.vi_VN.L_Search:</span>
+                            <input id="txtSearch" type="search" placeholder="@ABM.Resources.vi_VN.L_TypeToFilter" />
+                            <input id="ddlPriority" type="hidden"/>
+                            <input id="ddlStatus" type="hidden" />                                                            
+                        </label>                            
+                    </div>        
+
+                    <div class="DTTT_container">
+                        <div class="btn-group dropup">
+                            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <i class="icon-command"></i> @ABM.Resources.vi_VN.Btn_Action 
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu icons-right">                                                                
+                                <li><a onclick="system.error.manipulate(systemConfig.action.published, 0);"><i class="icon-checkmark-circle"></i> @ABM.Resources.vi_VN.Btn_Complete</a></li>
+                                <li><a onclick="system.error.manipulate(systemConfig.action.remove, 0);"><i class="icon-cancel-circle"></i> @ABM.Resources.vi_VN.Btn_Wait</a></li>
+                            </ul>                                
+                        </div>                         
+                        <button type="button" data-container="body" data-toggle="popover" data-placement="left" data-content="<ol><li>Di chuột vào bảng và chọn lỗi</li><li>Nhấn 'Thao tác' chọn 'Hoàn thành' hoặc 'Chờ sử lý'</li></ol>" data-html="true" data-trigger="hover click" title="Hướng dẫn" class="btn btn-default btn-icon"><i class="icon-question2"></i></button>   
+                    </div>  
+
+                    <div class="dataTables_length">
+                        <label>
+                            <span>@ABM.Resources.vi_VN.L_PageNumber:</span>                                
+                            <input id="ddlPageSize" type="hidden"/>                                
+                        </label>
+                    </div>                                                                
+                </div>
+                <div class="datatable-scroll">
+                    <table class="table dataTable">
+                        <thead>
+                            <tr role="row">
+                                <th class="w45 aligncenter">@ABM.Resources.vi_VN.Table_Col_RowNumber</th>
+                                <th>@ABM.Resources.vi_VN.M_Error_Table_Col_Image</th>
+                                <th>@ABM.Resources.vi_VN.M_Error_Table_Col_Priority</th>		                                
+                                <th>@ABM.Resources.vi_VN.M_Error_Table_Col_FullName</th>		                                
+                                <th>@ABM.Resources.vi_VN.M_Error_Table_Col_Email</th>
+                                <th>@ABM.Resources.vi_VN.M_Error_Table_Col_Desc</th>				        
+                                <th>@ABM.Resources.vi_VN.M_Error_Table_Col_CreatedDate</th>		
+                                <th class="w100">@ABM.Resources.vi_VN.Table_Col_Action</th>
+                            </tr>
+                        </thead>                    
+                        <tbody>                        
+                            <tr class="odd">
+                                <td valign="top" colspan="8" class="dataTables_empty">@ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>     
+                <div class="datatable-footer">
+                    <div class="dataTables_info"></div>
+                    <div class="dataTables_paginate paging_full_numbers">
+                        <ul class="pagination"></ul>
+                    </div>
+                </div>                               
+            </div>
+        </div>           
+    </div>
+    <!-- /error tab -->    
+</div>
+<!-- page tabs -->
+
+<input id="hfCurrentPageIndex" type="hidden"/>
+
+<script type="text/javascript">
+    $(function () {
+        system.error.init();
+    });
+</script>

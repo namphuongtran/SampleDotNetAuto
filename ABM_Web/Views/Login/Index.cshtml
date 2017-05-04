@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+        <title>.: Hanot Pest Control Company | Đăng nhập :.</title>
+
+        <link href="/css/bootstrap.min.css"   rel="stylesheet" type="text/css">
+        <link href="/css/londinium-theme.css" rel="stylesheet" type="text/css">
+        <link href="/css/styles.css"          rel="stylesheet" type="text/css">
+        <link href="/css/icons.css"           rel="stylesheet" type="text/css">
+
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/forms/md5.js"></script>
+        <script type="text/javascript" src="/js/plugins/interface/jgrowl.min.js"></script>
+
+        <script type="text/javascript" src="/js/main/utils.js"></script>
+        <script type="text/javascript" src="/js/main/login.js"></script>    
+    </head>
+    
+    <body class="full-width page-condensed">
+	    <!-- Navbar -->
+	    <div class="navbar navbar-default" role="navigation">
+		    <div class="navbar-header">			    
+			    <a class="navbar-brand" href="/"><img src="/images/logo.png" height="52px" alt="Hanot Pest Control Company"></a>
+		    </div>	
+            
+	        <ul class="nav navbar-nav navbar-right collapse">
+	            <li><a href="#">&nbsp;</a></li>
+	            <li>
+	                <a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-support"></i></a>
+	                <ul class="dropdown-menu icons-right dropdown-menu-right">	                    
+	                    <li><a href="mailto:@ABM.Resources.vi_VN.Copyright_Email"><i class="icon-mail-send"></i> Hỗ trợ</a></li>	                    
+	                </ul>
+	            </li>
+	        </ul>	
+	    </div>
+	    <!-- /navbar -->
+
+	    <!-- Login wrapper -->
+	    <div class="login-wrapper">
+    	    <form action="#" role="form">
+			    <div class="popup-header">
+				    <a href="#" class="pull-left"><i class="icon-home3"></i></a>
+			        <span class="text-semibold">@ABM.Resources.vi_VN.L_Login_Title</span>				                    
+			    </div>
+	            <div id="regionLogin" class="well">
+	                <div class="form-group has-feedback">
+	                    <label>@ABM.Resources.vi_VN.L_Username</label>
+	                    <input name="Username" type="text" class="form-control" value="admin"/>
+	                    <i class="icon-users form-control-feedback"></i>
+	                </div>
+
+	                <div class="form-group has-feedback">
+	                    <label>@ABM.Resources.vi_VN.L_Password</label>
+	                    <input name="Password" type="password" class="form-control" value="123456" />
+	                    <i class="icon-lock form-control-feedback"></i>
+	                </div>
+
+	                <div class="row form-actions">					
+	                    <div class="col-xs-12">
+	                        <button onclick="login.validate();" type="button" class="btn btn-warning pull-right"><i class="icon-menu2"></i> @ABM.Resources.vi_VN.Btn_Login</button>
+	                    </div>
+	                </div>
+	            </div>                
+    	    </form>
+	    </div>  
+	    <!-- /login wrapper -->
+    
+        <!-- Footer -->
+        <div class="footer clearfix">
+            <div class="pull-left">&copy; @ABM.Resources.vi_VN.Copyright_Content</div>
+            <div class="pull-right icons-group">    	        
+    	        <a href="#" class="tip" title="Đầu trang"><i class="icon-arrow-up9"></i></a>
+            </div>
+        </div>
+        <!-- /footer -->
+    
+        <script type="text/javascript">            
+            $(function () {
+                login.init();
+            });
+        </script>
+    </body>
+</html>

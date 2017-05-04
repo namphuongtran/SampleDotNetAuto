@@ -1,0 +1,174 @@
+﻿<script id="tpl-list-category" type="text/html">            
+    {{#Data}}           
+    <tr>    
+        <td class="aligncenter">{{ItemIndex}}</td>
+        <td>{{CategoryName}}</td>
+        <td class="aligncenter">{{DisplayOrder}}</td>        
+        <td class="aligncenter">{{Level}}</td>        
+        <td class="aligncenter">
+            <div class="btn-group mr5">{{{ImageStatus}}}</div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-icon btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="icon-grid"></i></button>
+                <ul class="dropdown-menu icons-right dropdown-menu-right">
+                    <li><a onclick="system.category.manipulate(systemConfig.action.getById, {{CategoryID}});"><i class="icon-pencil3"></i> Sửa</a></li>
+                    <li><a onclick="system.category.manipulate(systemConfig.action.del, {{CategoryID}});"><i class="icon-remove3"></i> Xóa</a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>   
+    {{/Data}}
+
+    {{^Data}}
+    <tr>
+        <td colspan="5">Không có dữ liệu!</td>   
+    </tr>        
+    {{/Data}}
+</script>
+
+
+<script id="tpl-form-category" type="text/html">        
+    <form id="formCategory" class="validate" role="form" method="post">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> Quản lý chuyên mục</h4>
+        </div>
+        <!-- Form inside modal -->
+        <div class="modal-body with-padding">
+            <div class="block-inner text-danger">
+                <h6 class="heading-hr">Tạo mới chuyên mục <small class="display-block">(*) Bắt buộc phải nhập</small></h6>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Tên chuyên mục <span class="mandatory">*</span></label>
+                        <input type="text" name="CategoryName" tabindex="1" class="required form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>Chuyên mục cha</label>
+                        <input id="ddlCategory" tabindex="2" type="hidden" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Chuyên mục tham chiếu</label>
+                        <input id="ddlReference" tabindex="3" type="hidden" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="control-label">Độ ưu tiên <span class="mandatory">*</span></label>
+                        <input type="text" name="DisplayOrder" value="1" tabindex="4" class="required form-control">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Trạng thái</label>
+                        <input id="ddlStatus" tabindex="5" type="hidden" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Ảnh</label>
+                        <div class="input-group">
+                            <input name="ImagePath" tabindex="6" type="text" class="required  form-control">
+                            <span class="input-group-addon" onclick="system.category.openFileManager();"><i class="icon-image2"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Mô tả</label>
+                        <textarea class="form-control" name="Description" rows="2" tabindex="7"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="9">Đóng</button>
+            <button onclick="system.category.manipulate(systemConfig.action.save, 0);" type="button" class="btn btn-success" tabindex="8">Lưu lại</button>
+        </div>
+    </form>
+</script>
+
+
+<script id="tpl-get-category" type="text/html">        
+    {{#Data}}           
+    <form id="formCategory" class="validate" role="form" method="post">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> Quản lý chuyên mục</h4>
+        </div>
+        <!-- Form inside modal -->
+        <div class="modal-body with-padding">
+            <div class="block-inner text-danger">
+                <h6 class="heading-hr">Tạo mới chuyên mục <small class="display-block">(*) Bắt buộc phải nhập</small></h6>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Tên chuyên mục <span class="mandatory">*</span></label>
+                        <input type="text" name="CategoryName" tabindex="1" value="{{CategoryName}}" class="required form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>Chuyên mục cha</label>
+                        <input id="ddlCategory" tabindex="2" type="hidden" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Chuyên mục tham chiếu</label>
+                        <input id="ddlReference" tabindex="3" type="hidden" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="control-label">Độ ưu tiên <span class="mandatory">*</span></label>
+                        <input type="text" name="DisplayOrder" value="{{DisplayOrder}}" tabindex="4" class="required form-control">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Trạng thái</label>
+                        <input id="ddlStatus" tabindex="5" type="hidden" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Ảnh</label>
+                        <div class="input-group">
+                            <input type="text" name="ImagePath" tabindex="6" value="{{ImagePath}}" class="required form-control">
+                            <span class="input-group-addon" onclick="system.category.openFileManager();"><i class="icon-image2"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Mô tả</label>
+                        <textarea class="form-control" name="Description" tabindex="7">{{{Description}}}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="9">Đóng</button>
+            <button onclick="system.category.manipulate(systemConfig.action.save, {{CategoryID}});" type="button" class="btn btn-success" tabindex="8">Lưu lại</button>
+        </div>
+    </form>
+    {{/Data}}    
+</script>

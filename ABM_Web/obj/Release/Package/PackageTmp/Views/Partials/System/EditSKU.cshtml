@@ -1,0 +1,91 @@
+﻿@using ABM.Common
+<form id="formProduct" method="post">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h6 class="panel-title"> <i class="icon-tag5"></i>Thông tin sản phẩm</h6></div>
+                <div id="editProduct" class="panel-body">
+
+                </div>
+            </div>
+            <!-- /product infomation -->
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h6 class="panel-title"><i class="icon-tag"></i> Sản phẩm liên quan</h6>
+                    <div class="pull-right">
+                        <a data-action="save" onclick="system.product.manipulateRelated(this);" title="Lưu" class="btn btn-default btn-icon btn-xs tip"><i class="icon-checkmark-circle"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <input id="ddlProduct" tabindex="6" type="hidden" />
+
+                    <div class="table-responsive">
+                        <table id="lstRelated" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Mã</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th class="text-right">Bán lẻ <br />NET</th>
+                                    <th class="text-right">Bán buôn <br /> NET</th>
+                                    <th class="w80 text-center">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td valign="top" colspan="5">Không có dữ liệu!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /related product -->
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h6 class="panel-title"><i class="icon-image"></i> Ảnh</h6>
+                    <div class="pull-right">
+                        <a onclick="system.product.setFinderManager('image');" class="btn btn-default btn-icon btn-xs tip" title="Chọn ảnh"><i class="icon-plus-circle"></i></a>
+                        <a onclick="system.product.saveImage();" title="Lưu" class="btn btn-default btn-icon btn-xs tip"><i class="icon-checkmark-circle"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="message-list">
+                        <li class="message-list-header">Danh sách ảnh</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /image -->
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h6 class="panel-title"><i class="icon-file6"></i> Tài liệu</h6>
+                    <div class="pull-right">
+                        <a onclick="system.product.setFinderManager('document');" class="btn btn-default btn-icon btn-xs tip" title="Chọn tài liệu"><i class="icon-plus-circle"></i></a>
+                        <a onclick="system.product.saveDocument();" class="btn btn-default btn-icon btn-xs tip" title="Lưu"><i class="icon-checkmark-circle"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="message-list">
+                        <li class="message-list-header">Danh sách tài liệu</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /file -->
+        </div>
+    </div>
+    <!-- /edit product -->    
+</form>
+
+<script type="text/javascript" src="/js/plugins/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {        
+        system.product.manipulate(systemConfig.action.getById, @Utils.ToInt32(Request.RequestContext.RouteData.Values["id"]));
+        system.dynamicDropDownList(systemConfig.ddlProduct, 0, { id: 0, text: '-- Sản phẩm --' }, null, true);
+    });
+</script>

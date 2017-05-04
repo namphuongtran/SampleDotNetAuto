@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resources>
+
+  <!-- List -->
+  <item report="1" type="chi-tiet">~/Views/Partials/List/Detail.cshtml</item>
+  <item report="1" type="tong-hop">~/Views/Partials/List/Synthesis.cshtml</item>
+
+  <!-- /List -->
+
+  <!-- Detail -->  
+  <item report="1" type="san-pham">~/Views/Partials/Filter/Detail/Product.cshtml</item>
+  <item report="1" type="website">~/Views/Partials/Filter/Detail/Website.cshtml</item>
+  <item report="1" type="hop-dong">~/Views/Partials/Filter/Detail/Contract.cshtml</item>
+  <item report="1" type="phong-ban">~/Views/Partials/Filter/Detail/Departments.cshtml</item>
+  <item report="1" type="bo-phan">~/Views/Partials/Filter/Detail/Parts.cshtml</item>
+  <item report="1" type="nhom">~/Views/Partials/Filter/Detail/Group.cshtml</item>
+  <item report="1" type="nhan-vien">~/Views/Partials/Filter/Detail/Staff.cshtml</item>
+  
+  <!-- /Detail -->
+
+  <!-- Synthesis -->
+  <item report="2" type="1">~/Views/Partials/Filter/Synthesis/Product.cshtml</item>
+  <item report="2" type="2">~/Views/Partials/Filter/Synthesis/Website.cshtml</item>
+  <item report="2" type="3">~/Views/Partials/Filter/Synthesis/Contract.cshtml</item>
+  <item report="2" type="4">~/Views/Partials/Filter/Synthesis/Departments.cshtml</item>
+  <item report="2" type="5">~/Views/Partials/Filter/Synthesis/Parts.cshtml</item>
+  <item report="2" type="6">~/Views/Partials/Filter/Synthesis/Group.cshtml</item>
+  <item report="2" type="7">~/Views/Partials/Filter/Synthesis/Staff.cshtml</item>
+
+  <!-- /Synthesis -->
+  
+  <!-- System -->
+  <item module="1" type="nhom">~/Views/Partials/System/Group.cshtml</item>
+  <item module="1" type="thanh-vien">~/Views/Partials/System/User.cshtml</item>
+  <item module="1" type="chuc-nang">~/Views/Partials/System/Menu.cshtml</item>
+  <item module="1" type="danh-muc">~/Views/Partials/System/Category.cshtml</item>
+  <item module="1" type="du-lieu">~/Views/Partials/System/Data.cshtml</item>
+  <item module="1" type="thiet-lap">~/Views/Partials/System/Setting.cshtml</item>
+  <item module="1" type="nha-phat-trien">~/Views/Partials/System/Developers.cshtml</item>
+  <item module="1" type="bao-loi">~/Views/Partials/System/Error.cshtml</item>
+  <item module="1" type="mac-dinh">~/Views/Partials/System/Default.cshtml</item>
+  
+  <!-- /System -->
+
+</Resources>

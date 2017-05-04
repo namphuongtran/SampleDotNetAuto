@@ -1,0 +1,80 @@
+C:\3. Working\backend\ABM_Web\bin\ABM_Web.dll.config
+C:\3. Working\backend\ABM_Web\bin\ABM_Web.dll
+C:\3. Working\backend\ABM_Web\bin\ABM_Web.pdb
+C:\3. Working\backend\ABM_Web\bin\ABM.Biz.dll
+C:\3. Working\backend\ABM_Web\bin\ABM.Common.dll
+C:\3. Working\backend\ABM_Web\bin\ABM.Dao.dll
+C:\3. Working\backend\ABM_Web\bin\ABM.Entity.dll
+C:\3. Working\backend\ABM_Web\bin\CKFinder.dll
+C:\3. Working\backend\ABM_Web\bin\Microsoft.Web.Infrastructure.dll
+C:\3. Working\backend\ABM_Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\3. Working\backend\ABM_Web\bin\Newtonsoft.Json.dll
+C:\3. Working\backend\ABM_Web\bin\System.Net.Http.Formatting.dll
+C:\3. Working\backend\ABM_Web\bin\System.Web.Helpers.dll
+C:\3. Working\backend\ABM_Web\bin\System.Web.Http.dll
+C:\3. Working\backend\ABM_Web\bin\System.Web.Http.WebHost.dll
+C:\3. Working\backend\ABM_Web\bin\System.Web.Mvc.dll
+C:\3. Working\backend\ABM_Web\bin\System.Web.Razor.dll
+C:\3. Working\backend\ABM_Web\bin\System.Web.WebPages.Deployment.dll
+C:\3. Working\backend\ABM_Web\bin\System.Web.WebPages.dll
+C:\3. Working\backend\ABM_Web\bin\System.Web.WebPages.Razor.dll
+C:\3. Working\backend\ABM_Web\bin\MySql.Data.dll
+C:\3. Working\backend\ABM_Web\bin\ABM.Biz.pdb
+C:\3. Working\backend\ABM_Web\bin\ABM.Common.pdb
+C:\3. Working\backend\ABM_Web\bin\ABM.Dao.pdb
+C:\3. Working\backend\ABM_Web\bin\ABM.Entity.pdb
+C:\3. Working\backend\ABM_Web\bin\Newtonsoft.Json.xml
+C:\3. Working\backend\ABM_Web\bin\System.Net.Http.Formatting.xml
+C:\3. Working\backend\ABM_Web\bin\System.Web.Helpers.xml
+C:\3. Working\backend\ABM_Web\bin\System.Web.Http.xml
+C:\3. Working\backend\ABM_Web\bin\System.Web.Http.WebHost.xml
+C:\3. Working\backend\ABM_Web\bin\System.Web.Mvc.xml
+C:\3. Working\backend\ABM_Web\bin\System.Web.Razor.xml
+C:\3. Working\backend\ABM_Web\bin\System.Web.WebPages.xml
+C:\3. Working\backend\ABM_Web\bin\System.Web.WebPages.Deployment.xml
+C:\3. Working\backend\ABM_Web\bin\System.Web.WebPages.Razor.xml
+C:\3. Working\backend\ABM_Web\obj\Release\ABM_Web.csprojResolveAssemblyReference.cache
+C:\3. Working\backend\ABM_Web\obj\Release\ABM_Web.App_GlobalResources.vi-VN.resources
+C:\3. Working\backend\ABM_Web\obj\Release\ABM_Web.csproj.GenerateResource.Cache
+C:\3. Working\backend\ABM_Web\obj\Release\ABM_Web.dll
+C:\3. Working\backend\ABM_Web\obj\Release\ABM_Web.pdb
+E:\Working\backend\ABM_Web\bin\ABM_Web.dll.config
+E:\Working\backend\ABM_Web\bin\ABM_Web.dll
+E:\Working\backend\ABM_Web\bin\ABM_Web.pdb
+E:\Working\backend\ABM_Web\bin\ABM.Biz.dll
+E:\Working\backend\ABM_Web\bin\ABM.Common.dll
+E:\Working\backend\ABM_Web\bin\ABM.Dao.dll
+E:\Working\backend\ABM_Web\bin\ABM.Entity.dll
+E:\Working\backend\ABM_Web\bin\CKFinder.dll
+E:\Working\backend\ABM_Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Working\backend\ABM_Web\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Working\backend\ABM_Web\bin\Newtonsoft.Json.dll
+E:\Working\backend\ABM_Web\bin\System.Net.Http.Formatting.dll
+E:\Working\backend\ABM_Web\bin\System.Web.Helpers.dll
+E:\Working\backend\ABM_Web\bin\System.Web.Http.dll
+E:\Working\backend\ABM_Web\bin\System.Web.Http.WebHost.dll
+E:\Working\backend\ABM_Web\bin\System.Web.Mvc.dll
+E:\Working\backend\ABM_Web\bin\System.Web.Razor.dll
+E:\Working\backend\ABM_Web\bin\System.Web.WebPages.Deployment.dll
+E:\Working\backend\ABM_Web\bin\System.Web.WebPages.dll
+E:\Working\backend\ABM_Web\bin\System.Web.WebPages.Razor.dll
+E:\Working\backend\ABM_Web\bin\MySql.Data.dll
+E:\Working\backend\ABM_Web\bin\ABM.Biz.pdb
+E:\Working\backend\ABM_Web\bin\ABM.Common.pdb
+E:\Working\backend\ABM_Web\bin\ABM.Dao.pdb
+E:\Working\backend\ABM_Web\bin\ABM.Entity.pdb
+E:\Working\backend\ABM_Web\bin\Newtonsoft.Json.xml
+E:\Working\backend\ABM_Web\bin\System.Net.Http.Formatting.xml
+E:\Working\backend\ABM_Web\bin\System.Web.Helpers.xml
+E:\Working\backend\ABM_Web\bin\System.Web.Http.xml
+E:\Working\backend\ABM_Web\bin\System.Web.Http.WebHost.xml
+E:\Working\backend\ABM_Web\bin\System.Web.Mvc.xml
+E:\Working\backend\ABM_Web\bin\System.Web.Razor.xml
+E:\Working\backend\ABM_Web\bin\System.Web.WebPages.xml
+E:\Working\backend\ABM_Web\bin\System.Web.WebPages.Deployment.xml
+E:\Working\backend\ABM_Web\bin\System.Web.WebPages.Razor.xml
+E:\Working\backend\ABM_Web\obj\Release\ABM_Web.csprojResolveAssemblyReference.cache
+E:\Working\backend\ABM_Web\obj\Release\ABM_Web.App_GlobalResources.vi-VN.resources
+E:\Working\backend\ABM_Web\obj\Release\ABM_Web.csproj.GenerateResource.Cache
+E:\Working\backend\ABM_Web\obj\Release\ABM_Web.dll
+E:\Working\backend\ABM_Web\obj\Release\ABM_Web.pdb

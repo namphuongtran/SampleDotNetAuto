@@ -1,0 +1,84 @@
+﻿<!-- Page tabs -->
+<div class="tabbable page-tabs">    
+    <!-- Article tab -->
+    <div class="tab-pane active fade in" id="chuyen-muc">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title"><i class="icon-table"></i>@ABM.Resources.vi_VN.M_Article_Panel_Title</h6>
+                <span class="pull-right label label-danger"></span>
+            </div> 
+            <div class="dataTables_wrapper">
+                <div class="datatable-header">                                                
+                    <div class="dataTables_filter">
+                        <label>
+                            <span>@ABM.Resources.vi_VN.L_Search:</span>
+                            <input id="txtSearchArticle" type="search" placeholder="@ABM.Resources.vi_VN.L_TypeToFilter" />
+                            <input id="ddlSearchCategory" type="hidden"/>                                
+                            <input id="ddlArticleStatus" type="hidden"/>                                
+                        </label>                            
+                    </div>        
+                    <div class="DTTT_container">
+                        <div class="btn-group dropup">
+                            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <i class="icon-command"></i> @ABM.Resources.vi_VN.Btn_Action 
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu icons-right">
+                                <li><a href="/he-thong/bai-viet-moi"><i class="icon-plus-circle"></i> @ABM.Resources.vi_VN.Btn_Create</a></li>
+                                <li><a onclick="system.article.manipulate(systemConfig.action.published, 0);"><i class="icon-checkmark-circle"></i> @ABM.Resources.vi_VN.Btn_Published</a></li>
+                                <li><a onclick="system.article.manipulate(systemConfig.action.remove, 0);"><i class="icon-cancel-circle"></i> @ABM.Resources.vi_VN.Btn_Removed</a></li>
+                                <li><a onclick="system.article.manipulate(systemConfig.action.focus, 0);"><i class="icon-star4"></i> @ABM.Resources.vi_VN.Btn_Focus</a></li>                                
+                            </ul>                                                                
+                        </div>                            
+                        <button type="button" data-container="body" data-toggle="popover" data-placement="left" data-content="<ol><li>Di chuột vào bảng và chọn bài viết</li><li>Nhấn 'Thao tác' chọn 'Xuất bản' hoặc 'Gỡ bài'</li><li>Bài viết được đánh dấu đỏ là 'Nổi bật'</li></ol>" data-html="true" data-trigger="hover click" title="Hướng dẫn" class="btn btn-default btn-icon"><i class="icon-question2"></i></button>
+                    </div>          
+                    <div class="dataTables_length">
+                        <label>
+                            <span>@ABM.Resources.vi_VN.L_PageNumber:</span>                                
+                            <input id="ddlPageSize" type="hidden"/>                                
+                        </label>
+                    </div>                
+                </div>
+                <div class="datatable-scroll">
+                    <table class="table dataTable">
+                        <thead>
+                            <tr role="row">                                    
+                                <th class="w45 aligncenter">@ABM.Resources.vi_VN.Table_Col_RowNumber</th>
+                                <th></th>
+                                <th>@ABM.Resources.vi_VN.M_Article_Table_Col_Title</th>
+                                <th>@ABM.Resources.vi_VN.M_Article_Table_Col_Category</th>				        
+                                <th class="w100">@ABM.Resources.vi_VN.M_Article_Table_Col_ApprovedBy</th>				        
+                                <th class="w120 aligncenter">@ABM.Resources.vi_VN.M_Article_Table_Col_PublishOn</th>				        
+                                <th class="w100">@ABM.Resources.vi_VN.Table_Col_Action</th>
+                            </tr>
+                        </thead>                    
+                        <tbody>                        
+                            <tr>
+                                <td valign="top" colspan="7" class="dataTables_empty">@ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" /></td>
+                            </tr>
+                        </tbody>
+                                                       
+                    </table>
+                </div>                    
+                <div class="datatable-footer">
+                    <div class="dataTables_info"></div>
+                    <div class="dataTables_paginate paging_full_numbers">
+                        <ul class="pagination"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>           
+    </div>
+    <!-- /article tab -->    
+</div>
+<!-- page tabs -->
+
+    
+<input id="hfCurrentPageIndex" type="hidden"/>
+
+
+<script type="text/javascript">
+    $(function() {        
+        system.article.init();
+    });
+</script>

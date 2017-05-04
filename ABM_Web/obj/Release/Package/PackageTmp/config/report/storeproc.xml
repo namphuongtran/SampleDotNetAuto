@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resources>
+
+  <!-- Report Detail -->  
+  <item type="1" level="1">ThucChay_v2_Get_List_Customer_Level_1_vNew</item>
+  <!--<item type="1" level="1">ThucChay_GetSumFilterCondition</item>-->
+  
+  <item type="1" level="2">ThucChay_GetContractFilterCondition</item>
+  <item type="1" level="3">ThucChay_GetDetailFilterCondition</item>
+  <item type="1" level="0">ThucChay_TotalSumByFillterCondition</item>
+
+  <!-- Report Detail -->
+
+</Resources>

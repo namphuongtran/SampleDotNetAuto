@@ -1,0 +1,193 @@
+﻿<form id="formProduct" method="post">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h6 class="panel-title"> <i class="icon-tag5"></i>Thông tin sản phẩm</h6></div>
+                <div class="panel-body">                    
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Mã: </label>
+                                <input type="text" name="Code" class="form-control" tabindex="1" value="001" />
+                            </div>
+                            <div class="col-md-4">
+                                <label>Tên ngắn gọn: </label>
+                                <input type="text" name="ShortName" class="form-control" tabindex="2" value="ABC" />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Tên sản phẩm: </label>
+                                <input type="text" name="Name" class="form-control" tabindex="3" value="ABCDEF" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Trạng thái: </label>
+                                <input id="ddlStatus" tabindex="5" type="hidden" />
+                            </div>
+                            <div class="col-md-4">
+                                <label>Danh mục: </label>
+                                <input id="ddlCategory" tabindex="6" type="hidden" />
+                            </div>
+                            <div class="col-md-3">
+                                <label>Độ ưu tiên: </label>
+                                <input type="text" name="DisplayOrder" class="form-control" tabindex="7" value="100" />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="checkbox-inline" style="margin-top: 32px;">
+                                    <input type="checkbox" name="isDeleted" class="styled" tabindex="8">Nổi bật
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Giá bán</label>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <input type="text" name="NETPrice" class="form-control" tabindex="9" value="333" />
+                                            <span class="input-group-addon">$</span>
+                                        </div>
+                                        <span class="help-block">Giá bán lẻ sau thuế</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <input type="text" name="VATPrice" class="form-control" tabindex="10" value="333" />
+                                            <span class="input-group-addon">$</span>
+                                        </div>
+                                        <span class="help-block">Giá bán lẻ trước thuế</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <input type="text" name="NETPriceNPP" class="form-control" tabindex="11" value="333" />
+                                            <span class="input-group-addon">$</span>
+                                        </div>
+                                        <span class="help-block">Giá bán buôn sau thuế</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <input type="text" name="VATPriceNPP" class="form-control" tabindex="12" value="333" />
+                                            <span class="input-group-addon">$</span>
+                                        </div>
+                                        <span class="help-block">Giá bán buôn trước thuế</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Nội dung </label>
+                                <textarea class="form-control" name="Description" tabindex="13"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions text-right">
+                        <a onclick="window.location.href = '/he-thong/san-pham';" class="btn btn-default mr5" role="button" tabindex="15">
+                            @ABM.Resources.vi_VN.Btn_Back
+                        </a>
+                        <a onclick="system.product.manipulate(systemConfig.action.save, 0);" class="btn btn-success" role="button" tabindex="14">
+                            @ABM.Resources.vi_VN.Btn_Save
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /product infomation -->
+        </div>
+
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h6 class="panel-title"><i class="icon-tag"></i> Sản phẩm liên quan</h6>
+                    <div class="pull-right">
+                        <a data-action="save" onclick="system.product.manipulateRelated(this);" title="Lưu" class="btn btn-default btn-icon btn-xs tip"><i class="icon-checkmark-circle"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <input id="ddlProduct" tabindex="6" type="hidden" />
+
+                    <div class="table-responsive">
+                        <table id="lstRelated" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Mã</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th class="text-right">Bán lẻ <br />NET</th>
+                                    <th class="text-right">Bán buôn <br /> NET</th>
+                                    <th class="w80 text-center">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td valign="top" colspan="5">Không có dữ liệu!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /related product -->
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h6 class="panel-title"><i class="icon-image"></i> Ảnh</h6>
+                    <div class="pull-right">
+                        <a onclick="system.product.setFinderManager('image');" class="btn btn-default btn-icon btn-xs tip" title="Chọn ảnh"><i class="icon-plus-circle"></i></a>
+                        <a onclick="system.product.saveImage();" title="Lưu" class="btn btn-default btn-icon btn-xs tip"><i class="icon-checkmark-circle"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="message-list">
+                        <li class="message-list-header">Danh sách ảnh</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /image -->
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h6 class="panel-title"><i class="icon-file6"></i> Tài liệu</h6>
+                    <div class="pull-right">
+                        <a onclick="system.product.setFinderManager('document');" class="btn btn-default btn-icon btn-xs tip" title="Chọn tài liệu"><i class="icon-plus-circle"></i></a>
+                        <a onclick="system.product.saveDocument();" class="btn btn-default btn-icon btn-xs tip" title="Lưu"><i class="icon-checkmark-circle"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="message-list">
+                        <li class="message-list-header">Danh sách tài liệu</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /file -->
+        </div>
+    </div>
+    <!-- /create product -->
+    <input id="hfSKUId" value="0" type="hidden" />
+</form>
+
+<script type="text/javascript" src="/js/plugins/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+        system.dynamicDropDownList(systemConfig.ddlCategory, 0, { id: 0, text: '-- Danh mục --' }, null, true);
+        system.dynamicDropDownList(systemConfig.ddlProduct, 0, { id: 0, text: '-- Sản phẩm --' }, null, true);
+        system.staticDropDownList(systemConfig.ddlStatus, systemConfig.data.statuses, 2, null, null, true);
+
+        system.product.listImage();
+        system.product.listDocument();
+        system.product.listRelated();
+
+        CKEDITOR.replace('Description');
+
+        system.registerUniform();
+    });
+</script>

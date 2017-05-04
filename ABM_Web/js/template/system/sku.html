@@ -1,0 +1,131 @@
+﻿<script id="tpl-list-product" type="text/html">            
+    {{#Data}}           
+    <tr id="{{SKUID}}">
+        <td class="aligncenter">{{ItemIndex}}</td>
+        <td><img src="{{FormatSmallImage}}" alt="" /></td>        
+        <td>{{Code}} - {{Name}}</td>
+        <td>{{CategoryName}}</td>
+        <td class="alignright">{{NETPrice}}</td>
+        <td class="alignright">{{VATPrice}}</td>
+        <td class="alignright">{{NETPriceNPP}}</td>
+        <td class="alignright">{{VATPriceNPP}}</td>                
+        <td class="alignright command">
+            <div class="btn-group">{{{ImageStatus}}}</div>
+            <div class="btn-group ml5">
+                <button type="button" class="btn btn-icon btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="icon-grid"></i></button>
+                <ul class="dropdown-menu icons-right dropdown-menu-right">
+                    <li><a href="/he-thong/sua-san-pham/{{SKUID}}"><i class="icon-pencil3"></i> Sửa</a></li>
+                    <li><a onclick="system.product.manipulate(systemConfig.action.del, {{SKUID}});"><i class="icon-remove3"></i> Xóa</a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>   
+    {{/Data}}
+
+    {{^Data}}
+    <tr>
+        <td colspan="9">Không có dữ liệu!</td>   
+    </tr>        
+    {{/Data}}
+</script>
+
+
+<script id="tpl-get-product" type="text/html">
+    {{#Data}}    
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2">
+                <label>Mã: </label>
+                <input type="text" name="Code" class="form-control" tabindex="1" value="{{Code}}" />
+            </div>
+            <div class="col-md-4">
+                <label>Tên ngắn gọn: </label>
+                <input type="text" name="ShortName" class="form-control" tabindex="2" value="{{ShortName}}" />
+            </div>
+            <div class="col-md-6">
+                <label>Tên sản phẩm: </label>
+                <input type="text" name="Name" class="form-control" tabindex="3" value="{{Name}}" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2">
+                <label>Trạng thái: </label>
+                <input id="ddlStatus" tabindex="5" type="hidden" />
+            </div>
+            <div class="col-md-4">
+                <label>Danh mục: </label>
+                <input id="ddlCategory" tabindex="6" type="hidden" />
+            </div>
+            <div class="col-md-3">
+                <label>Độ ưu tiên: </label>
+                <input type="text" name="DisplayOrder" class="form-control" tabindex="7" value="{{DisplayOrder}}" />
+            </div>
+            <div class="col-md-3">
+                <label class="checkbox-inline" style="margin-top: 32px;">                    
+                    <input type="checkbox" name="isDeleted" class="styled" tabindex="8" /> Nổi bật                    
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Giá bán</label>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" name="NETPrice" class="form-control" tabindex="9" value="{{NETPrice}}" />
+                            <span class="input-group-addon">$</span>
+                        </div>
+                        <span class="help-block">Giá bán lẻ sau thuế</span>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" name="VATPrice" class="form-control" tabindex="10" value="{{VATPrice}}" />
+                            <span class="input-group-addon">$</span>
+                        </div>
+                        <span class="help-block">Giá bán lẻ trước thuế</span>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" name="NETPriceNPP" class="form-control" tabindex="11" value="{{NETPriceNPP}}" />
+                            <span class="input-group-addon">$</span>
+                        </div>
+                        <span class="help-block">Giá bán buôn sau thuế</span>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" name="VATPriceNPP" class="form-control" tabindex="12" value="{{VATPriceNPP}}" />
+                            <span class="input-group-addon">$</span>
+                        </div>
+                        <span class="help-block">Giá bán buôn trước thuế</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Nội dung </label>
+                <textarea class="form-control" name="Description" tabindex="13">{{{Description}}}</textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-actions text-right">
+        <a href="/he-thong/san-pham" class="btn btn-default mr5" role="button" tabindex="15">
+            Quay lại
+        </a>
+        <a onclick="system.product.manipulate(systemConfig.action.save, {{SKUID}});" class="btn btn-success" role="button" tabindex="14">
+            Lưu lại
+        </a>
+    </div>    
+    <input id="hfSKUId" value="{{SKUID}}" type="hidden" />
+    {{/Data}}
+</script>

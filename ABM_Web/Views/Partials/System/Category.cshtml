@@ -1,0 +1,61 @@
+﻿<!-- Page tabs -->
+<div class="tabbable page-tabs">    
+    <!-- Category tab -->
+    <div class="tab-pane active fade in" id="chuyen-muc">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title"><i class="icon-table"></i>@ABM.Resources.vi_VN.Menu_System_Category2</h6>
+                <span class="pull-right label label-danger"></span>
+            </div>    
+            
+            <div class="dataTables_wrapper">                    
+                <div class="datatable-header">
+                    <div class="DTTT_container">                                                            
+                        <a onclick="system.category.manipulate(systemConfig.action.create, 0);" data-toggle="modal" class="btn btn-default" role="button">
+                            <i class="icon-plus-circle"></i> @ABM.Resources.vi_VN.Btn_Create
+                        </a>
+                    </div>
+
+                    <div class="dataTables_filter">
+                        <label>
+                            <span>@ABM.Resources.vi_VN.L_Search:</span>
+                            <input id="txtSearchCategory" type="search" class="" placeholder="@ABM.Resources.vi_VN.L_TypeToFilter" />
+                            <input id="ddlCategoryStatus" type="hidden"/>                                
+                        </label>                            
+                    </div>                                                                                             
+                </div>
+
+                <div class="datatable-scroll">
+                    <table class="table dataTable">
+                        <thead>
+                            <tr role="row">
+                                <th class="w45 aligncenter">@ABM.Resources.vi_VN.Table_Col_RowNumber</th>
+                                <th>@ABM.Resources.vi_VN.M_Category_Table_Col_Name</th>                                    
+                                <th class="w45 aligncenter">@ABM.Resources.vi_VN.M_Category_Table_Col_Priority</th>				        
+                                <th class="w45 aligncenter">@ABM.Resources.vi_VN.M_Category_Table_Col_Level</th>				        
+                                <th class="w100 text-center">@ABM.Resources.vi_VN.Table_Col_Action</th>
+                            </tr>
+                        </thead>                    
+                        <tbody>                        
+                            <tr class="odd">
+                                <td valign="top" colspan="5" class="dataTables_empty">@ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>                                        
+            </div>
+        </div>           
+    </div>
+    <!-- /category tab -->    
+</div>
+<!-- page tabs -->
+
+
+<script type="text/javascript" src="/js/plugins/ckfinder/ckfinder.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/js/plugins/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+        system.category.init();
+    });
+</script>

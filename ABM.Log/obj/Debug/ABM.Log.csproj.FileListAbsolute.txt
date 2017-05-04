@@ -1,0 +1,5 @@
+C:\3. Working\backend\ABM.Log\bin\Debug\ABM.Log.dll
+C:\3. Working\backend\ABM.Log\bin\Debug\ABM.Log.pdb
+C:\3. Working\backend\ABM.Log\obj\Debug\ABM.Log.csprojResolveAssemblyReference.cache
+C:\3. Working\backend\ABM.Log\obj\Debug\ABM.Log.dll
+C:\3. Working\backend\ABM.Log\obj\Debug\ABM.Log.pdb

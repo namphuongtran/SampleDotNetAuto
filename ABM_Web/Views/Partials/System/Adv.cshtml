@@ -1,0 +1,71 @@
+﻿<!-- Page tabs -->
+<div class="tabbable page-tabs">    
+    <!-- Category tab -->
+    <div class="tab-pane active fade in" id="chuyen-muc">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h6 class="panel-title"><i class="icon-table"></i>@ABM.Resources.vi_VN.Menu_System_Adv</h6>
+                <span class="pull-right label label-danger"></span>
+            </div>    
+            
+            <div class="dataTables_wrapper">                    
+                <div class="datatable-header">
+                    <div class="DTTT_container">                                                            
+                        <a onclick="system.adv.manipulate(systemConfig.action.create, 0);" data-toggle="modal" class="btn btn-default" role="button">
+                            <i class="icon-plus-circle"></i> @ABM.Resources.vi_VN.Btn_Create
+                        </a>
+                    </div>
+                    
+                    <div class="dataTables_length">
+                        <label>
+                            <span>@ABM.Resources.vi_VN.L_PageNumber:</span>                                
+                            <input id="ddlPageSize" type="hidden"/>                                
+                        </label>
+                    </div>                
+
+                    <div class="dataTables_filter">
+                        <label>
+                            <input id="ddlSearchAdvType" type="hidden"/>                                
+                        </label>                            
+                    </div>                                                                                             
+                </div>
+
+                <div class="datatable-scroll">
+                    <table class="table dataTable">
+                        <thead>
+                            <tr role="row">
+                                <th class="w45 aligncenter">@ABM.Resources.vi_VN.Table_Col_RowNumber</th>                                
+                                <th class="w140 aligncenter"></th>
+                                <th class="w45 aligncenter">@ABM.Resources.vi_VN.M_Adv_Table_Col_Type_Name</th>                                                                    
+                                <th class="w45 aligncenter">@ABM.Resources.vi_VN.M_Adv_Table_Col_Url</th>				        
+                                <th class="w45 aligncenter">@ABM.Resources.vi_VN.M_Adv_Table_Col_Priority</th>				        
+                                <th class="w100 aligncenter">@ABM.Resources.vi_VN.Table_Col_Action</th>
+                            </tr>
+                        </thead>                    
+                        <tbody>                        
+                            <tr class="odd">
+                                <td valign="top" colspan="6" class="dataTables_empty">@ABM.Resources.vi_VN.Loading <img src="/images/loaders/loader5.gif" alt="" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>          
+                <div class="datatable-footer">
+                    <div class="dataTables_info"></div>
+                    <div class="dataTables_paginate paging_full_numbers">
+                        <ul class="pagination"></ul>
+                    </div>
+                </div>                              
+            </div>
+        </div>           
+    </div>
+    <!-- /category tab -->    
+</div>
+<!-- page tabs -->
+
+
+<script type="text/javascript" src="/js/plugins/ckfinder/ckfinder.js"></script>
+<script type="text/javascript">
+    $(function () {
+        system.adv.init();
+    });
+</script>

@@ -1,0 +1,20 @@
+C:\3. Working\backend\ABM.Dao\bin\Debug\ABM.Dao.dll
+C:\3. Working\backend\ABM.Dao\bin\Debug\ABM.Dao.pdb
+C:\3. Working\backend\ABM.Dao\bin\Debug\ABM.Common.dll
+C:\3. Working\backend\ABM.Dao\bin\Debug\ABM.Entity.dll
+C:\3. Working\backend\ABM.Dao\bin\Debug\MySql.Data.dll
+C:\3. Working\backend\ABM.Dao\bin\Debug\ABM.Common.pdb
+C:\3. Working\backend\ABM.Dao\bin\Debug\ABM.Entity.pdb
+C:\3. Working\backend\ABM.Dao\obj\Debug\ABM.Dao.csprojResolveAssemblyReference.cache
+C:\3. Working\backend\ABM.Dao\obj\Debug\ABM.Dao.dll
+C:\3. Working\backend\ABM.Dao\obj\Debug\ABM.Dao.pdb
+E:\Working\backend\ABM.Dao\bin\Debug\ABM.Dao.dll
+E:\Working\backend\ABM.Dao\bin\Debug\ABM.Dao.pdb
+E:\Working\backend\ABM.Dao\bin\Debug\ABM.Common.dll
+E:\Working\backend\ABM.Dao\bin\Debug\ABM.Entity.dll
+E:\Working\backend\ABM.Dao\bin\Debug\MySql.Data.dll
+E:\Working\backend\ABM.Dao\bin\Debug\ABM.Common.pdb
+E:\Working\backend\ABM.Dao\bin\Debug\ABM.Entity.pdb
+E:\Working\backend\ABM.Dao\obj\Debug\ABM.Dao.csprojResolveAssemblyReference.cache
+E:\Working\backend\ABM.Dao\obj\Debug\ABM.Dao.dll
+E:\Working\backend\ABM.Dao\obj\Debug\ABM.Dao.pdb

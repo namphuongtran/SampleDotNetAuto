@@ -1,0 +1,5 @@
+C:\3. Working\backend\ABM.Common\bin\Debug\ABM.Common.dll
+C:\3. Working\backend\ABM.Common\bin\Debug\ABM.Common.pdb
+C:\3. Working\backend\ABM.Common\obj\Debug\ABM.Common.csprojResolveAssemblyReference.cache
+C:\3. Working\backend\ABM.Common\obj\Debug\ABM.Common.dll
+C:\3. Working\backend\ABM.Common\obj\Debug\ABM.Common.pdb

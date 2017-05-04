@@ -1,0 +1,56 @@
+﻿<script id="tpl-list-error" type="text/html">            
+    {{#Data}}           
+    <tr id="{{ErrorId}}">
+        <td class="aligncenter">{{ItemIndex}}</td>
+        <td><a href="{{FormatLargeImage}}" target="_blank"><img src="{{FormatSmallImage}}" alt=""/></a></td>
+        <td>{{{FormatPriority}}}</td>        
+        <td>{{FullName}}</td>        
+        <td>{{Email}}</td>        
+        <td>{{Message}}</td>        
+        <td>{{FormatCreatedDate}}</td>                
+        <td class="aligncenter command">                        
+            <div class="btn-group">{{{ImageStatus}}}</div>            
+            {{{FormatNote}}}
+        </td>
+    </tr>   
+    {{/Data}}
+
+    {{^Data}}
+    <tr>
+        <td colspan="8">Không có dữ liệu!</td>   
+    </tr>        
+    {{/Data}}
+</script>
+
+
+<script id="tpl-get-error" type="text/html">        
+    {{#Data}}       
+    <form class="validate" action="#" role="form" method="post">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title"><i class="icon-paragraph-justify2"></i> Thông tin lỗi</h4>
+        </div>
+
+        <!-- Form inside modal -->
+        <div class="modal-body with-padding">
+            <div class="block-inner text-danger">
+                <h6 class="heading-hr">Ghi chú <small class="display-block">Cập nhật thông tin hoặc mô tả thêm về thông tin lỗi</small></h6>
+            </div>                            
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Nội dung</label>                        
+                        <textarea class="form-control" name="Note" tabindex="7">{{{Note}}}</textarea>                        
+                    </div>				                                        
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">			        
+            <button type="button" class="btn btn-default" data-dismiss="modal" tabindex="6">Đóng</button>					
+            <button onclick="system.error.manipulate(systemConfig.action.save, {{ErrorId}});" type="button" class="btn btn-success" tabindex="2">Lưu lại</button>
+        </div>
+    </form>
+    {{/Data}}
+</script>
